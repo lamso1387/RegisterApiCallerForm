@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TestModelStoreContainer" CdmEntityContainer="TestEntities1">
+    <EntitySetMapping Name="AnbarTests">
+      <EntityTypeMapping TypeName="TestModel.AnbarTest">
+        <MappingFragment StoreEntitySet="AnbarTest">
+          <ScalarProperty Name="senf_id" ColumnName="senf_id" />
+          <ScalarProperty Name="api_key" ColumnName="api_key" />
+          <ScalarProperty Name="error" ColumnName="error" />
+          <ScalarProperty Name="user_last_name" ColumnName="user_last_name" />
+          <ScalarProperty Name="warehouse_id" ColumnName="warehouse_id" />
+          <ScalarProperty Name="full_address" ColumnName="full_address" />
+          <ScalarProperty Name="user_first_name" ColumnName="user_first_name" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="province" ColumnName="province" />
+          <ScalarProperty Name="city_input" ColumnName="city_input" />
+          <ScalarProperty Name="province_input" ColumnName="province_input" />
+          <ScalarProperty Name="activity_sector" ColumnName="activity_sector" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="contractor_or_agent" ColumnName="contractor_or_agent" />
+          <ScalarProperty Name="postal_code" ColumnName="postal_code" />
+          <ScalarProperty Name="co_register_no" ColumnName="co_register_no" />
+          <ScalarProperty Name="co_national_id" ColumnName="co_national_id" />
+          <ScalarProperty Name="co_name" ColumnName="co_name" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="birthepoch" ColumnName="birthepoch" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="SSNN_no" ColumnName="SSNN_no" />
+          <ScalarProperty Name="national_id" ColumnName="national_id" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

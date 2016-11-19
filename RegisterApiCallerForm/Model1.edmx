@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SemnanModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="SemnanModelStoreContainer">
+          <EntitySet Name="Anbar" EntityType="SemnanModel.Store.Anbar" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Key" EntityType="SemnanModel.Store.Key" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Anbar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="address" Type="nvarchar" MaxLength="255" />
+          <Property Name="date" Type="nvarchar" MaxLength="255" />
+          <Property Name="tel" Type="nvarchar" MaxLength="255" />
+          <Property Name="mobile" Type="nvarchar" MaxLength="255" />
+          <Property Name="senf_id" Type="nvarchar" MaxLength="255" />
+          <Property Name="fname" Type="nvarchar" MaxLength="255" />
+          <Property Name="etehadie" Type="nvarchar" MaxLength="255" />
+          <Property Name="family" Type="nvarchar" MaxLength="255" />
+          <Property Name="raste" Type="nvarchar" MaxLength="255" />
+          <Property Name="co_national_id" Type="nvarchar" MaxLength="255" />
+          <Property Name="national_id" Type="nvarchar" MaxLength="255" />
+          <Property Name="postal_code" Type="nvarchar" MaxLength="255" />
+          <Property Name="activity_sector" Type="nvarchar" MaxLength="255" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="province_input" Type="nvarchar" MaxLength="255" />
+          <Property Name="city_input" Type="nvarchar" MaxLength="255" />
+          <Property Name="contractor_or_agent" Type="nvarchar" MaxLength="255" />
+          <Property Name="type" Type="nvarchar" MaxLength="255" />
+          <Property Name="province" Type="nvarchar" MaxLength="255" />
+          <Property Name="city" Type="nvarchar" MaxLength="255" />
+          <Property Name="user_id" Type="nvarchar" MaxLength="255" />
+          <Property Name="user_first_name" Type="nvarchar" MaxLength="255" />
+          <Property Name="full_address" Type="nvarchar(max)" />
+          <Property Name="warehouse_id" Type="nvarchar" MaxLength="255" />
+          <Property Name="company_name" Type="nvarchar" MaxLength="255" />
+          <Property Name="user_last_name" Type="nvarchar" MaxLength="255" />
+          <Property Name="error_farsi" Type="nvarchar" MaxLength="255" />
+          <Property Name="error" Type="nvarchar(max)" />
+          <Property Name="api_key" Type="nvarchar" MaxLength="255" />
+          <Property Name="last_sent" Type="datetime" />
+          <Property Name="tag" Type="nvarchar" MaxLength="50" />
+          <Property Name="explain" Type="nvarchar" MaxLength="255" />
+          <Property Name="output_result" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Key">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="api_key" Type="nvarchar" MaxLength="50" />
+          <Property Name="title" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SemnanModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SemnanEntities3" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Anbars" EntityType="SemnanModel.Anbar" />
+          <EntitySet Name="Keys" EntityType="SemnanModel.Key" />
+        </EntityContainer>
+        <EntityType Name="Anbar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="address" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="date" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="tel" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="mobile" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="senf_id" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="fname" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="etehadie" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="family" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="raste" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="national_id" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="postal_code" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="activity_sector" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="province_input" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="city_input" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="contractor_or_agent" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="type" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="province" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="city" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="user_id" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="user_first_name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="full_address" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="warehouse_id" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="user_last_name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="error" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="api_key" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="last_sent" Type="DateTime" Precision="3" />
+          <Property Name="tag" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="explain" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="co_national_id" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="company_name" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="output_result" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="error_farsi" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Key">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="api_key" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="title" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SemnanModelStoreContainer" CdmEntityContainer="SemnanEntities3">
+          <EntitySetMapping Name="Anbars">
+            <EntityTypeMapping TypeName="SemnanModel.Anbar">
+              <MappingFragment StoreEntitySet="Anbar">
+                <ScalarProperty Name="error_farsi" ColumnName="error_farsi" />
+                <ScalarProperty Name="output_result" ColumnName="output_result" />
+                <ScalarProperty Name="company_name" ColumnName="company_name" />
+                <ScalarProperty Name="co_national_id" ColumnName="co_national_id" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="senf_id" ColumnName="senf_id" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="etehadie" ColumnName="etehadie" />
+                <ScalarProperty Name="family" ColumnName="family" />
+                <ScalarProperty Name="raste" ColumnName="raste" />
+                <ScalarProperty Name="national_id" ColumnName="national_id" />
+                <ScalarProperty Name="postal_code" ColumnName="postal_code" />
+                <ScalarProperty Name="activity_sector" ColumnName="activity_sector" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="province_input" ColumnName="province_input" />
+                <ScalarProperty Name="city_input" ColumnName="city_input" />
+                <ScalarProperty Name="contractor_or_agent" ColumnName="contractor_or_agent" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="province" ColumnName="province" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="user_first_name" ColumnName="user_first_name" />
+                <ScalarProperty Name="full_address" ColumnName="full_address" />
+                <ScalarProperty Name="warehouse_id" ColumnName="warehouse_id" />
+                <ScalarProperty Name="user_last_name" ColumnName="user_last_name" />
+                <ScalarProperty Name="error" ColumnName="error" />
+                <ScalarProperty Name="api_key" ColumnName="api_key" />
+                <ScalarProperty Name="last_sent" ColumnName="last_sent" />
+                <ScalarProperty Name="tag" ColumnName="tag" />
+                <ScalarProperty Name="explain" ColumnName="explain" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Keys">
+            <EntityTypeMapping TypeName="SemnanModel.Key">
+              <MappingFragment StoreEntitySet="Key">
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="api_key" ColumnName="api_key" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

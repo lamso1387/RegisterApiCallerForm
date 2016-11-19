@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="TestEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AnbarTests" EntityType="TestModel.AnbarTest" />
+  </EntityContainer>
+  <EntityType Name="AnbarTest">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="national_id" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SSNN_no" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="gender" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="birthepoch" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="mobile" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="co_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="co_national_id" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="co_register_no" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="postal_code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="contractor_or_agent" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="activity_sector" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="province_input" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="city_input" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="province" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="city" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="user_id" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="user_first_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="full_address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="warehouse_id" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="user_last_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="error" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="api_key" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="senf_id" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

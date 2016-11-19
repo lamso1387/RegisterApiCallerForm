@@ -1,0 +1,44 @@
+2016-11-02 18:22:42,864 [1] DEBUG HibernatingRhinos.Profiler.Client.App [(null)] - Profiler initialized. Build: 3103
+2016-11-02 18:22:48,885 [1] WARN  Rhino.Licensing.AbstractLicenseValidator [(null)] - Could not find license file: C:\Users\project\AppData\Local\NHibernate Profiler\license.xml
+2016-11-02 18:25:56,125 [1] WARN  Rhino.Licensing.AbstractLicenseValidator [(null)] - License expiration date is 12/03/2016 00:00:00
+2016-11-02 18:25:56,474 [1] DEBUG Rhino.Licensing.AbstractLicenseValidator [(null)] - License accepted for NHibernate Profiler
+2016-11-02 18:25:59,324 [16] INFO  HibernatingRhinos.Profiler.Client.Infrastructure.AutoUpdate.ProfilerAutoUpdate [(null)] - Checking for updates...
+2016-11-02 18:38:33,216 [26] FATAL HibernatingRhinos.Profiler.Client.HandleUnhandledExceptions [(null)] - Unhandled exception ruthlessly killed application
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.InvalidOperationException: The calling thread must be STA, because many UI components require this.
+   at System.Windows.Input.InputManager..ctor()
+   at System.Windows.Input.InputManager.GetCurrentInputManagerImpl()
+   at System.Windows.Input.KeyboardNavigation..ctor()
+   at System.Windows.FrameworkElement.EnsureFrameworkServices()
+   at System.Windows.FrameworkElement..ctor()
+   at System.Windows.Controls.Control..ctor()
+   at HibernatingRhinos.Profiler.Client.Licensing.LicensePromptView..ctor()
+   --- End of inner exception stack trace ---
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at Caliburn.Micro.ViewLocator.<.cctor>b__2(Type viewType)
+   at HibernatingRhinos.Profiler.Client.ProfilerBootstrapper.<.cctor>b__6(Type modelType, DependencyObject displayLocation, Object context)
+   at Caliburn.Micro.ViewLocator.<.cctor>b__a(Object model, DependencyObject displayLocation, Object context)
+   at Caliburn.Micro.WindowManager.CreateWindow(Object rootModel, Boolean isDialog, Object context, IDictionary`2 settings)
+   at Caliburn.Micro.WindowManager.ShowDialog(Object rootModel, Object context, IDictionary`2 settings)
+   at HibernatingRhinos.Profiler.Client.Controls.Dialog.Show(Object model, Object context, Boolean windowWithFullLogo)
+   at HibernatingRhinos.Profiler.Client.Services.InitialTrialService.ValidateThatUserInTrialTime()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.TimerQueueTimer.CallCallback()
+   at System.Threading.TimerQueueTimer.Fire()
+   at System.Threading.TimerQueue.FireNextTimers()
+2016-11-02 18:41:06,497 [1] DEBUG HibernatingRhinos.Profiler.Client.App [(null)] - Profiler initialized. Build: 3103
+2016-11-02 18:41:09,649 [1] WARN  Rhino.Licensing.AbstractLicenseValidator [(null)] - License expiration date is 12/03/2016 00:00:00
+2016-11-02 18:41:09,786 [1] DEBUG Rhino.Licensing.AbstractLicenseValidator [(null)] - License accepted for NHibernate Profiler
+2016-11-02 18:41:09,804 [9] INFO  HibernatingRhinos.Profiler.Client.Infrastructure.AutoUpdate.ProfilerAutoUpdate [(null)] - Checking for updates...
+2016-11-02 18:58:03,326 [1] DEBUG HibernatingRhinos.Profiler.Client.App [(null)] - Profiler initialized. Build: 3103
+2016-11-02 18:58:06,262 [1] WARN  Rhino.Licensing.AbstractLicenseValidator [(null)] - License expiration date is 12/03/2016 00:00:00
+2016-11-02 18:58:06,383 [1] DEBUG Rhino.Licensing.AbstractLicenseValidator [(null)] - License accepted for NHibernate Profiler
+2016-11-02 18:58:06,398 [5] INFO  HibernatingRhinos.Profiler.Client.Infrastructure.AutoUpdate.ProfilerAutoUpdate [(null)] - Checking for updates...
+2016-11-02 19:14:12,385 [1] DEBUG HibernatingRhinos.Profiler.Client.App [(null)] - Profiler initialized. Build: 3103
+2016-11-02 19:14:15,536 [1] WARN  Rhino.Licensing.AbstractLicenseValidator [(null)] - License expiration date is 12/03/2016 00:00:00
+2016-11-02 19:14:15,661 [1] DEBUG Rhino.Licensing.AbstractLicenseValidator [(null)] - License accepted for NHibernate Profiler
+2016-11-02 19:14:15,677 [9] INFO  HibernatingRhinos.Profiler.Client.Infrastructure.AutoUpdate.ProfilerAutoUpdate [(null)] - Checking for updates...

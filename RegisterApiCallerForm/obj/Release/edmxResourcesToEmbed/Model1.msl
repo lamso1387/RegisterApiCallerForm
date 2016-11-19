@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SemnanModelStoreContainer" CdmEntityContainer="SemnanEntities3">
+    <EntitySetMapping Name="Anbars">
+      <EntityTypeMapping TypeName="SemnanModel.Anbar">
+        <MappingFragment StoreEntitySet="Anbar">
+          <ScalarProperty Name="output_result" ColumnName="output_result" />
+          <ScalarProperty Name="company_name" ColumnName="company_name" />
+          <ScalarProperty Name="co_national_id" ColumnName="co_national_id" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="senf_id" ColumnName="senf_id" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="etehadie" ColumnName="etehadie" />
+          <ScalarProperty Name="family" ColumnName="family" />
+          <ScalarProperty Name="raste" ColumnName="raste" />
+          <ScalarProperty Name="national_id" ColumnName="national_id" />
+          <ScalarProperty Name="postal_code" ColumnName="postal_code" />
+          <ScalarProperty Name="activity_sector" ColumnName="activity_sector" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="province_input" ColumnName="province_input" />
+          <ScalarProperty Name="city_input" ColumnName="city_input" />
+          <ScalarProperty Name="contractor_or_agent" ColumnName="contractor_or_agent" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="province" ColumnName="province" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="user_first_name" ColumnName="user_first_name" />
+          <ScalarProperty Name="full_address" ColumnName="full_address" />
+          <ScalarProperty Name="warehouse_id" ColumnName="warehouse_id" />
+          <ScalarProperty Name="user_last_name" ColumnName="user_last_name" />
+          <ScalarProperty Name="error" ColumnName="error" />
+          <ScalarProperty Name="api_key" ColumnName="api_key" />
+          <ScalarProperty Name="last_sent" ColumnName="last_sent" />
+          <ScalarProperty Name="tag" ColumnName="tag" />
+          <ScalarProperty Name="explain" ColumnName="explain" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Keys">
+      <EntityTypeMapping TypeName="SemnanModel.Key">
+        <MappingFragment StoreEntitySet="Key">
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="api_key" ColumnName="api_key" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

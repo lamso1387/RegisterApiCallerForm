@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AnbarTest">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="national_id" Type="nvarchar" MaxLength="255" />
+    <Property Name="SSNN_no" Type="nvarchar" MaxLength="255" />
+    <Property Name="gender" Type="nvarchar" MaxLength="255" />
+    <Property Name="birthepoch" Type="nvarchar" MaxLength="255" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="255" />
+    <Property Name="email" Type="nvarchar" MaxLength="255" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" />
+    <Property Name="co_name" Type="nvarchar" MaxLength="255" />
+    <Property Name="co_national_id" Type="nvarchar" MaxLength="255" />
+    <Property Name="co_register_no" Type="nvarchar" MaxLength="255" />
+    <Property Name="postal_code" Type="nvarchar" MaxLength="255" />
+    <Property Name="contractor_or_agent" Type="nvarchar" MaxLength="255" />
+    <Property Name="type" Type="nvarchar" MaxLength="255" />
+    <Property Name="activity_sector" Type="nvarchar" MaxLength="255" />
+    <Property Name="province_input" Type="nvarchar" MaxLength="255" />
+    <Property Name="city_input" Type="nvarchar" MaxLength="255" />
+    <Property Name="province" Type="nvarchar" MaxLength="255" />
+    <Property Name="city" Type="nvarchar" MaxLength="255" />
+    <Property Name="user_id" Type="nvarchar" MaxLength="255" />
+    <Property Name="user_first_name" Type="nvarchar" MaxLength="255" />
+    <Property Name="full_address" Type="nvarchar" MaxLength="255" />
+    <Property Name="warehouse_id" Type="nvarchar" MaxLength="255" />
+    <Property Name="user_last_name" Type="nvarchar" MaxLength="255" />
+    <Property Name="error" Type="nvarchar(max)" />
+    <Property Name="api_key" Type="nvarchar" MaxLength="255" />
+    <Property Name="senf_id" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityContainer Name="TestModelStoreContainer">
+    <EntitySet Name="AnbarTest" EntityType="Self.AnbarTest" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
