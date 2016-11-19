@@ -33,7 +33,7 @@ namespace RegisterApiCallerForm
 
 
             List<Anbar> DBitems = db.Anbars.Select(x => x).OrderBy(x => x.ID).Skip(int.Parse(tbFrom.Text) - 1).Take(int.Parse(tbTo.Text)).ToList();
-            Publics.StartSending(db, DBitems, tbFrom.Text, btnSeeData);
+            Publics.StartSending(db, DBitems);
         }
 
         private void btnGetRows_Click(object sender, EventArgs e)

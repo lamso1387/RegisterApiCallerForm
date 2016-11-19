@@ -144,7 +144,7 @@
         public System.Windows.Forms.Label lblTime;
         public System.Windows.Forms.Label lblSrart;
         public System.Windows.Forms.Label lblEnd;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnDgvBind;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.Button btnDgvBind;
     }
 }

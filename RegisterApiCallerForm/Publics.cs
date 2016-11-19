@@ -15,38 +15,71 @@ namespace RegisterApiCallerForm
 {
     class Publics
     {
-       
+
         public static HttpClient client = new HttpClient();
         public static string apiKey;
         public static string uri;
         public static string errorSMS;
         public static bool stopLoop = false;
 
-        static Dictionary<string, object> input;
-        static Loading loading;
+        //static Dictionary<string, object> input;
+        //static Loading loading;
 
-        public static void StartSending(SemnanEntities3 db, List<Anbar> DBitems, string from, Button btnSearch)
+        static int i;
+        static int all;
+        static int notRegistered;
+
+
+        public static void ParallelSend(SemnanEntities3 db, List<Anbar> DBitems, string from, Button btnSearch, string parallel)
         {
-            Publics.stopLoop = false;
-            loading = new Loading();
+            i = 0;
+            all = DBitems.Count;
+            notRegistered = 0;
+
+            Loading loading = new Loading();
             loading.Show();
-            int i = 0;
-            int notRegistered = 0;
-            int all = DBitems.Count;
-            Stopwatch apiTimer;
-            TimeSpan apiTimeTaken = new TimeSpan(0, 0, 0);
-            Stopwatch appTimer;
-            loading.Text = from;
             loading.lblSrart.Text = DateTime.Now.ToString();
+            loading.lblLoading.Text = " در حال ارسال  " + all + " رکورد بصورت  " + parallel + "کانال موازی ...";
+            loading.Text = from;
+            TruncateTimeTable(db);
+            Publics.stopLoop = false;
+            List<Task> task_list = new List<Task>();
+            int per_count = int.Parse(parallel);
+            int take = all / per_count;
+            int skip = 0;
+            var DBquery = DBitems.AsQueryable();
+            for (int j = 0; j < per_count; j++)
+            {
+                Application.DoEvents();
+                var query = DBquery.Skip(skip).Take(take);
+                skip += take;
+                Task task = new Task(() => StartSending(db, query.ToList()));
+                task_list.Add(task);
+                task.Start();
+
+            }
+            Task.WaitAll(task_list.ToArray());
+
+            loading.lblLoading.Text = " تعداد  " + i + " رکورد از " + all + " رکورد بررسی شد " + "\n" +
+            " ارسال " + notRegistered + " از " + i + " مورد برای ثبت نام انجام شد   " + "\n" +
+            "تعداد " + (notRegistered - DBquery.Take(i).Where(x => x.user_id == null || x.user_id == string.Empty || x.user_id == "").ToList().Count) + "ثبت نام جدید انجام شد";
+            loading.lblEnd.Text = DateTime.Now.ToString();
+            loading.Text = from + "-done";
+            loading.btnClose.Enabled = true;
+            loading.lblTime.Text = db.TimeTakens.Select(x => x.time_taken).Average().ToString();
+            btnSearch.PerformClick();
+        }
+
+        public static void StartSending(SemnanEntities3 db, List<Anbar> DBitems)
+        {
+            int all_per = DBitems.Count;
+            Stopwatch apiTimer;
             foreach (Anbar DBitem in DBitems)
             {
                 Application.DoEvents();
                 apiTimer = new Stopwatch();
-                appTimer = new Stopwatch();
-                appTimer.Start();
-                if (Publics.stopLoop) { loading.Text += "-stopped"; break; }
+                if (Publics.stopLoop) break;
                 i++;
-                loading.lblLoading.Text = "در حال ارسال " + i + " از " + all;
 
                 if (string.IsNullOrWhiteSpace(DBitem.user_id))
 
@@ -54,36 +87,25 @@ namespace RegisterApiCallerForm
                     {
                         notRegistered++;
                         RegisterAnbarDB(db, DBitem, apiTimer);
-                        apiTimeTaken = apiTimer.Elapsed;
-                        loading.lblTime.Text = apiTimeTaken.ToString();
                     }
                     catch (Exception error)
                     {
                         DBitem.error = error.Message;
                         db.SaveChanges();
-
                     }
-                appTimer.Stop();
 
             }
-            loading.lblLoading.Text = " تعداد  " + i + " رکورد از " + all + " رکورد بررسی شد " + "\n" +
-            " ارسال " + notRegistered + " از " + i + " مورد برای ثبت نام انجام شد   " + "\n" +
-            "تعداد " + (notRegistered - DBitems.AsQueryable().Take(i).Where(x => x.user_id == null || x.user_id == string.Empty || x.user_id == "").ToList().Count) + "ثبت نام جدید انجام شد";
-            loading.lblEnd.Text = DateTime.Now.ToString();
-            loading.Text += "-done";
-            loading.btnClose.Enabled = true;
-            btnSearch.PerformClick();
         }
 
         public static void RegisterAnbarDB(SemnanEntities3 db, Anbar DBitem, Stopwatch timer)
         {
 
-            input = new Dictionary<string, object>();
+            Dictionary<string, object> input = new Dictionary<string, object>();
             input = CreateInputFromDB(input, DBitem);
             timer.Start();
             var result = SendAnbar(input);
             timer.Stop();
-            InsertIntoDB(db, result, DBitem);
+            InsertIntoDB(db, result, DBitem, timer.Elapsed.TotalSeconds);
         }
 
         private static Dictionary<string, object> CreateInputFromDB(Dictionary<string, object> input, Anbar DBitem)
@@ -115,9 +137,10 @@ namespace RegisterApiCallerForm
             return response.Content.ReadAsStringAsync().Result;
         }
 
-        private static void InsertIntoDB(SemnanEntities3 db, string result, Anbar DBitem)
+        private static void InsertIntoDB(SemnanEntities3 db, string result, Anbar DBitem, double time_taked)
         {
 
+            db.TimeTakens.Add(new TimeTaken() { time_taken = time_taked });
 
             DBitem.output_result = System.Text.RegularExpressions.Regex.Unescape(result);
 
@@ -140,6 +163,7 @@ namespace RegisterApiCallerForm
             }
             db.SaveChanges();
         }
+
 
         public static void GetRows(DataGridView dgv, TextBox tbFrom,TextBox tbTo, SemnanEntities3 db)
         {
@@ -166,7 +190,7 @@ namespace RegisterApiCallerForm
         }
         public static void ButtonLoading(Action<object, EventArgs> method)
         {
-            loading = new Loading();
+            Loading loading = new Loading();
             loading.Show();
             loading.lblTime.Text = "";
             loading.lblLoading.Text = "در حال اعمال اطلاعات...";
@@ -238,6 +262,11 @@ namespace RegisterApiCallerForm
 
             chart.DataSource = query.ToList();
             chart.DataBind();
+        }
+        private static void TruncateTimeTable(SemnanEntities3 db)
+        {
+            db.Database.ExecuteSqlCommand("truncate table TimeTaken");
+            db.SaveChanges();
         }
 
     }

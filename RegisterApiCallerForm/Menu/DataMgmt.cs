@@ -93,8 +93,7 @@ namespace RegisterApiCallerForm
         {
             Publics.ButtonLoading(btnSearch_Click);
             var DBitems = queryList;
-           // Publics.StartSending(db, queryList, tbFrom.Text, btnSearch);
-            Test.ParallelSend(db, queryList, tbFrom.Text, btnSearch,tbParalel.Text);
+            Publics.ParallelSend(db, queryList, tbFrom.Text, btnSearch,tbParalel.Text);
             
         }
        
