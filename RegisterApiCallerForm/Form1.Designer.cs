@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
-            this.tbMaxTime = new System.Windows.Forms.TextBox();
-            this.chbMaxTime = new System.Windows.Forms.CheckBox();
             this.btnKeyTitles = new System.Windows.Forms.Button();
             this.lblKeyTitle = new System.Windows.Forms.Label();
             this.cbErrorSMS = new System.Windows.Forms.ComboBox();
@@ -46,8 +44,8 @@
             this.miSendDB = new System.Windows.Forms.ToolStripMenuItem();
             this.miMgmt = new System.Windows.Forms.ToolStripMenuItem();
             this.miReport = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlmain = new System.Windows.Forms.Panel();
             this.miErrorMgtm = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlmain = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -55,8 +53,6 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.tbMaxTime);
-            this.panel3.Controls.Add(this.chbMaxTime);
             this.panel3.Controls.Add(this.btnKeyTitles);
             this.panel3.Controls.Add(this.lblKeyTitle);
             this.panel3.Controls.Add(this.cbErrorSMS);
@@ -71,28 +67,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1120, 113);
             this.panel3.TabIndex = 6;
-            // 
-            // tbMaxTime
-            // 
-            this.tbMaxTime.Enabled = false;
-            this.tbMaxTime.Location = new System.Drawing.Point(10, 48);
-            this.tbMaxTime.Name = "tbMaxTime";
-            this.tbMaxTime.Size = new System.Drawing.Size(54, 20);
-            this.tbMaxTime.TabIndex = 27;
-            this.tbMaxTime.Text = "15";
-            this.tbMaxTime.TextChanged += new System.EventHandler(this.tbMaxTime_TextChanged);
-            // 
-            // chbMaxTime
-            // 
-            this.chbMaxTime.AutoSize = true;
-            this.chbMaxTime.Location = new System.Drawing.Point(70, 50);
-            this.chbMaxTime.Name = "chbMaxTime";
-            this.chbMaxTime.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.chbMaxTime.Size = new System.Drawing.Size(138, 17);
-            this.chbMaxTime.TabIndex = 26;
-            this.chbMaxTime.Text = "حداکثر زمان داشته باشد:";
-            this.chbMaxTime.UseVisualStyleBackColor = true;
-            this.chbMaxTime.CheckedChanged += new System.EventHandler(this.chbMaxTime_CheckedChanged);
             // 
             // btnKeyTitles
             // 
@@ -217,13 +191,14 @@
             this.miSendDB.Name = "miSendDB";
             this.miSendDB.Size = new System.Drawing.Size(111, 20);
             this.miSendDB.Text = "ارسال از پایگاه داده";
+            this.miSendDB.Visible = false;
             this.miSendDB.Click += new System.EventHandler(this.miSendDB_Click);
             // 
             // miMgmt
             // 
             this.miMgmt.Name = "miMgmt";
-            this.miMgmt.Size = new System.Drawing.Size(90, 20);
-            this.miMgmt.Text = "مدیریت اطلاعات";
+            this.miMgmt.Size = new System.Drawing.Size(130, 20);
+            this.miMgmt.Text = "مدیریت و ارسال اطلاعات";
             this.miMgmt.Click += new System.EventHandler(this.miMgmt_Click);
             // 
             // miReport
@@ -233,6 +208,13 @@
             this.miReport.Text = "گزارش";
             this.miReport.Click += new System.EventHandler(this.miReport_Click);
             // 
+            // miErrorMgtm
+            // 
+            this.miErrorMgtm.Name = "miErrorMgtm";
+            this.miErrorMgtm.Size = new System.Drawing.Size(105, 20);
+            this.miErrorMgtm.Text = "مرتب سازی خطاها";
+            this.miErrorMgtm.Click += new System.EventHandler(this.miErrorMgtm_Click);
+            // 
             // pnlmain
             // 
             this.pnlmain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -240,13 +222,6 @@
             this.pnlmain.Name = "pnlmain";
             this.pnlmain.Size = new System.Drawing.Size(1000, 500);
             this.pnlmain.TabIndex = 15;
-            // 
-            // miErrorMgtm
-            // 
-            this.miErrorMgtm.Name = "miErrorMgtm";
-            this.miErrorMgtm.Size = new System.Drawing.Size(105, 20);
-            this.miErrorMgtm.Text = "مرتب سازی خطاها";
-            this.miErrorMgtm.Click += new System.EventHandler(this.miErrorMgtm_Click);
             // 
             // Form1
             // 
@@ -288,8 +263,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblKeyTitle;
         private System.Windows.Forms.Button btnKeyTitles;
-        private System.Windows.Forms.TextBox tbMaxTime;
-        private System.Windows.Forms.CheckBox chbMaxTime;
         private System.Windows.Forms.ToolStripMenuItem miReport;
         private System.Windows.Forms.ToolStripMenuItem miErrorMgtm;
     }

@@ -8,6 +8,7 @@
         <EntityContainer Name="SemnanModelStoreContainer">
           <EntitySet Name="Anbar" EntityType="SemnanModel.Store.Anbar" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Key" EntityType="SemnanModel.Store.Key" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TimeTaken" EntityType="SemnanModel.Store.TimeTaken" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
         <EntityType Name="Anbar">
           <Key>
@@ -56,6 +57,13 @@
           <Property Name="api_key" Type="nvarchar" MaxLength="50" />
           <Property Name="title" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="TimeTaken">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="time_taken" Type="float" />
+        </EntityType>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -63,6 +71,7 @@
         <EntityContainer Name="SemnanEntities3" p1:LazyLoadingEnabled="true">
           <EntitySet Name="Anbars" EntityType="SemnanModel.Anbar" />
           <EntitySet Name="Keys" EntityType="SemnanModel.Key" />
+          <EntitySet Name="TimeTakens" EntityType="SemnanModel.TimeTaken" />
         </EntityContainer>
         <EntityType Name="Anbar">
           <Key>
@@ -110,6 +119,13 @@
           <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="api_key" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="title" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TimeTaken">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Double" Name="time_taken" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -162,6 +178,14 @@
               <MappingFragment StoreEntitySet="Key">
                 <ScalarProperty Name="title" ColumnName="title" />
                 <ScalarProperty Name="api_key" ColumnName="api_key" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TimeTakens">
+            <EntityTypeMapping TypeName="SemnanModel.TimeTaken">
+              <MappingFragment StoreEntitySet="TimeTaken">
+                <ScalarProperty Name="time_taken" ColumnName="time_taken" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -20,10 +20,7 @@ namespace RegisterApiCallerForm
         public static string apiKey;
         public static string uri;
         public static string errorSMS;
-        public static bool hasMaxTime = false;
-        public static int maxTime = 15;
         public static bool stopLoop = false;
-        public static bool isDisconnected = false;
 
         static Dictionary<string, object> input;
         static Loading loading;
@@ -47,9 +44,7 @@ namespace RegisterApiCallerForm
                 apiTimer = new Stopwatch();
                 appTimer = new Stopwatch();
                 appTimer.Start();
-                if (Publics.hasMaxTime) if (apiTimeTaken.Seconds > Publics.maxTime) { loading.Text += "-timeout"; break; }
                 if (Publics.stopLoop) { loading.Text += "-stopped"; break; }
-                if (Publics.isDisconnected) { loading.Text += "-disconnected"; break; }
                 i++;
                 loading.lblLoading.Text = "در حال ارسال " + i + " از " + all;
 
@@ -69,7 +64,6 @@ namespace RegisterApiCallerForm
 
                     }
                 appTimer.Stop();
-                loading.lblAppTime.Text = appTimer.Elapsed.ToString();
 
             }
             loading.lblLoading.Text = " تعداد  " + i + " رکورد از " + all + " رکورد بررسی شد " + "\n" +
@@ -154,7 +148,6 @@ namespace RegisterApiCallerForm
             tbFrom.Text = (db.Anbars.ToList().IndexOf(db.Anbars.Where(x => x.ID == id).First()) + 1).ToString();
             tbTo.Text = dgv.SelectedRows.Count.ToString();
         }
-
         public static bool IsJson(string input)
         {
             input = input.Trim();
@@ -175,7 +168,7 @@ namespace RegisterApiCallerForm
         {
             loading = new Loading();
             loading.Show();
-            loading.lblAppTime.Text = loading.lblTime.Text = "";
+            loading.lblTime.Text = "";
             loading.lblLoading.Text = "در حال اعمال اطلاعات...";
             method(null, null);
             loading.Close();
@@ -226,7 +219,6 @@ namespace RegisterApiCallerForm
             
             
         }
-
         public static void MakeChart(Chart chart,string xValue, string yValue, IQueryable<object> query)
         {
             string chartName="name";

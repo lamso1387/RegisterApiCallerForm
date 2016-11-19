@@ -32,9 +32,11 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.lblTime = new System.Windows.Forms.Label();
-            this.lblAppTime = new System.Windows.Forms.Label();
             this.lblSrart = new System.Windows.Forms.Label();
             this.lblEnd = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnDgvBind = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblLoading
@@ -73,18 +75,9 @@
             this.lblTime.AutoSize = true;
             this.lblTime.Location = new System.Drawing.Point(12, 79);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(64, 13);
+            this.lblTime.Size = new System.Drawing.Size(98, 13);
             this.lblTime.TabIndex = 3;
-            this.lblTime.Text = "زمان سرویس";
-            // 
-            // lblAppTime
-            // 
-            this.lblAppTime.AutoSize = true;
-            this.lblAppTime.Location = new System.Drawing.Point(12, 104);
-            this.lblAppTime.Name = "lblAppTime";
-            this.lblAppTime.Size = new System.Drawing.Size(58, 13);
-            this.lblAppTime.TabIndex = 4;
-            this.lblAppTime.Text = "زمان برنامه";
+            this.lblTime.Text = "متوسط زمان سرویس";
             // 
             // lblSrart
             // 
@@ -104,20 +97,40 @@
             this.lblEnd.TabIndex = 6;
             this.lblEnd.Text = "پایان";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(135, 130);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(171, 266);
+            this.dataGridView1.TabIndex = 7;
+            // 
+            // btnDgvBind
+            // 
+            this.btnDgvBind.Location = new System.Drawing.Point(135, 398);
+            this.btnDgvBind.Name = "btnDgvBind";
+            this.btnDgvBind.Size = new System.Drawing.Size(171, 23);
+            this.btnDgvBind.TabIndex = 8;
+            this.btnDgvBind.Text = "بروزرسانی";
+            this.btnDgvBind.UseVisualStyleBackColor = true;
+            this.btnDgvBind.Click += new System.EventHandler(this.btnDgvBind_Click);
+            // 
             // Loading
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 126);
+            this.ClientSize = new System.Drawing.Size(499, 433);
+            this.Controls.Add(this.btnDgvBind);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblEnd);
             this.Controls.Add(this.lblSrart);
-            this.Controls.Add(this.lblAppTime);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblLoading);
             this.Name = "Loading";
             this.Text = "Loading";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,8 +142,9 @@
         public System.Windows.Forms.Button btnClose;
         public System.Windows.Forms.Button btnStop;
         public System.Windows.Forms.Label lblTime;
-        public System.Windows.Forms.Label lblAppTime;
         public System.Windows.Forms.Label lblSrart;
         public System.Windows.Forms.Label lblEnd;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnDgvBind;
     }
 }

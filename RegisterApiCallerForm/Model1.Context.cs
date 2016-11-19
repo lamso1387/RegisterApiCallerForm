@@ -27,5 +27,6 @@ namespace RegisterApiCallerForm
     
         public DbSet<Anbar> Anbars { get; set; }
         public DbSet<Key> Keys { get; set; }
+        public DbSet<TimeTaken> TimeTakens { get; set; }
     }
 }

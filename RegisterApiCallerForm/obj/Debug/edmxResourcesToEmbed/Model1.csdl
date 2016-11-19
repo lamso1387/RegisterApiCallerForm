@@ -3,6 +3,7 @@
   <EntityContainer Name="SemnanEntities3" p1:LazyLoadingEnabled="true">
     <EntitySet Name="Anbars" EntityType="SemnanModel.Anbar" />
     <EntitySet Name="Keys" EntityType="SemnanModel.Key" />
+    <EntitySet Name="TimeTakens" EntityType="SemnanModel.TimeTaken" />
   </EntityContainer>
   <EntityType Name="Anbar">
     <Key>
@@ -50,5 +51,12 @@
     <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Type="String" Name="api_key" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="title" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TimeTaken">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Double" Name="time_taken" />
   </EntityType>
 </Schema>

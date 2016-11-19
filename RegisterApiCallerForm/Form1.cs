@@ -140,14 +140,11 @@ namespace RegisterApiCallerForm
 
         private void chbMaxTime_CheckedChanged(object sender, EventArgs e)
         {
-            tbMaxTime.Enabled = chbMaxTime.Checked;
-            Publics.hasMaxTime = chbMaxTime.Checked;
 
         }
 
         private void tbMaxTime_TextChanged(object sender, EventArgs e)
         {
-            Publics.maxTime = int.Parse(tbMaxTime.Text);
         }
 
         private void miReport_Click(object sender, EventArgs e)

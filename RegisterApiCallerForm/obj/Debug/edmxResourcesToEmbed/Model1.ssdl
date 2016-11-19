@@ -3,6 +3,7 @@
   <EntityContainer Name="SemnanModelStoreContainer">
     <EntitySet Name="Anbar" EntityType="SemnanModel.Store.Anbar" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Key" EntityType="SemnanModel.Store.Key" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TimeTaken" EntityType="SemnanModel.Store.TimeTaken" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
   <EntityType Name="Anbar">
     <Key>
@@ -50,5 +51,12 @@
     <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="api_key" Type="nvarchar" MaxLength="50" />
     <Property Name="title" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TimeTaken">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="time_taken" Type="float" />
   </EntityType>
 </Schema>

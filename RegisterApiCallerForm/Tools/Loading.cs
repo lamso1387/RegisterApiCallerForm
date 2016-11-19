@@ -32,5 +32,17 @@ namespace RegisterApiCallerForm
         {
             Publics.stopLoop = true;
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnDgvBind_Click(object sender, EventArgs e)
+        {
+            SemnanEntities3 db=new SemnanEntities3();
+            dataGridView1.DataSource = db.TimeTakens.Select(x => x.time_taken).ToList();
+
+        }
     }
 }
