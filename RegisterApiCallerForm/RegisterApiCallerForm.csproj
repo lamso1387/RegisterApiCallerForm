@@ -90,7 +90,6 @@
     <Compile Include="Menu\Report.Designer.cs">
       <DependentUpon>Report.cs</DependentUpon>
     </Compile>
-    <Compile Include="Test.cs" />
     <Compile Include="TimeTaken.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
