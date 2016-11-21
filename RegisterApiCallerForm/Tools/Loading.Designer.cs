@@ -35,7 +35,6 @@
             this.lblSrart = new System.Windows.Forms.Label();
             this.lblEnd = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnDgvBind = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,27 +99,16 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(135, 130);
+            this.dataGridView1.Location = new System.Drawing.Point(135, 133);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(171, 266);
+            this.dataGridView1.Size = new System.Drawing.Size(233, 266);
             this.dataGridView1.TabIndex = 7;
-            // 
-            // btnDgvBind
-            // 
-            this.btnDgvBind.Location = new System.Drawing.Point(135, 398);
-            this.btnDgvBind.Name = "btnDgvBind";
-            this.btnDgvBind.Size = new System.Drawing.Size(171, 23);
-            this.btnDgvBind.TabIndex = 8;
-            this.btnDgvBind.Text = "بروزرسانی";
-            this.btnDgvBind.UseVisualStyleBackColor = true;
-            this.btnDgvBind.Click += new System.EventHandler(this.btnDgvBind_Click);
             // 
             // Loading
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(499, 433);
-            this.Controls.Add(this.btnDgvBind);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblEnd);
             this.Controls.Add(this.lblSrart);
@@ -145,6 +133,5 @@
         public System.Windows.Forms.Label lblSrart;
         public System.Windows.Forms.Label lblEnd;
         public System.Windows.Forms.DataGridView dataGridView1;
-        public System.Windows.Forms.Button btnDgvBind;
     }
 }

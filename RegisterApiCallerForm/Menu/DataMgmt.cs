@@ -230,25 +230,38 @@ namespace RegisterApiCallerForm
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-            loading = new Loading();
+            Publics.ButtonLoading(btnSearch_Click);
+            ExportToExcell(dgv);
+            
+        }
+
+        private void ExportToExcell(DataGridView dgview)
+        {
+            
+            Loading loading = new Loading();
             loading.lblLoading.Text = "در حال اکسل سازی";
-            loading.btnStop.Enabled = false;
+            loading.lblTime.Text = "";
+            loading.dataGridView1.Visible = false;
             loading.Show();
-            btnSearch.PerformClick();
-            DataSet ds=new DataSet();
-            ds.Tables.Add();
-            for (int i = 0; i < dgv.Columns.Count; i++) ds.Tables[0].Columns.Add();
-            foreach (var row in queryList)
+            DataSet ds = new DataSet();
+            DataTable table = new DataTable("DataFromDGV");
+            ds.Tables.Add(table);
+            foreach (DataGridViewColumn col in dgview.Columns)
+                table.Columns.Add(col.HeaderText, typeof(string));
+            foreach (DataGridViewRow row in dgv.Rows)
             {
                 Application.DoEvents();
-                ds.Tables[0].Rows.Add(row.fname, row.family, row.date, row.mobile, row.name,
-                    row.national_id, row.postal_code, row.co_national_id, row.address, row.activity_sector,
-                    row.raste, row.senf_id, row.etehadie, row.tel, row.province_input, row.city_input,
-                      row.user_first_name, row.user_last_name, row.province, row.city, row.full_address,
-                    row.company_name, row.error_farsi, row.warehouse_id);
+                table.Rows.Add();
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    Application.DoEvents();
+                    table.Rows[row.Index][cell.ColumnIndex] = cell.Value;
+                    loading.lblLoading.Text = "در حال اکسلینگ ردیف " + row.Index;
+                }
             }
-            ExcelLibrary.DataSetHelper.CreateWorkbook("MyExcelFile.xls", ds);
-            loading.lblLoading.Text = "خروجی در مسیر دیباگ انجام شد";
+
+            ExcelLibrary.DataSetHelper.CreateWorkbook(@"C:\Users\project\Desktop\MyExcelFile.xls", ds);
+            loading.lblLoading.Text = "خروجی در مسیر دسکتاپ انجام شد";
             loading.btnClose.Enabled = true;
         }
         

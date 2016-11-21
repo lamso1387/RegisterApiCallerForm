@@ -22,8 +22,6 @@ namespace RegisterApiCallerForm
         public static string errorSMS;
         public static bool stopLoop = false;
 
-        //static Dictionary<string, object> input;
-        //static Loading loading;
 
         static int i;
         static int all;
@@ -67,6 +65,7 @@ namespace RegisterApiCallerForm
             loading.Text = from + "-done";
             loading.btnClose.Enabled = true;
             loading.lblTime.Text = db.TimeTakens.Select(x => x.time_taken).Average().ToString();
+            loading.dataGridView1.DataSource = new SemnanEntities3().TimeTakens.Select(x => x).ToList();
             btnSearch.PerformClick();
         }
 

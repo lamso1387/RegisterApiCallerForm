@@ -40,12 +40,6 @@ namespace RegisterApiCallerForm
 
         private void btnDgvBind_Click(object sender, EventArgs e)
         {
-             //dataGridView1.Columns.Add("time","time");
-             //foreach (var item in new SemnanEntities3().TimeTakens.Select(x => x.time_taken))
-             //{
-             //    dataGridView1.Rows.Add(item.Value);
-             //}
-            dataGridView1.DataSource = new SemnanEntities3().TimeTakens.Select(x => x).ToList();
 
         }
     }
