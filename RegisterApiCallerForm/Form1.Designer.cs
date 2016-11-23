@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cbMethodName = new System.Windows.Forms.ComboBox();
             this.btnKeyTitles = new System.Windows.Forms.Button();
             this.lblKeyTitle = new System.Windows.Forms.Label();
             this.cbErrorSMS = new System.Windows.Forms.ComboBox();
@@ -45,8 +46,8 @@
             this.miMgmt = new System.Windows.Forms.ToolStripMenuItem();
             this.miReport = new System.Windows.Forms.ToolStripMenuItem();
             this.miErrorMgtm = new System.Windows.Forms.ToolStripMenuItem();
+            this.miEstelamTest = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlmain = new System.Windows.Forms.Panel();
-            this.تستاستعلامToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +55,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.cbMethodName);
             this.panel3.Controls.Add(this.btnKeyTitles);
             this.panel3.Controls.Add(this.lblKeyTitle);
             this.panel3.Controls.Add(this.cbErrorSMS);
@@ -68,6 +70,19 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1120, 113);
             this.panel3.TabIndex = 6;
+            // 
+            // cbMethodName
+            // 
+            this.cbMethodName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMethodName.FormattingEnabled = true;
+            this.cbMethodName.Items.AddRange(new object[] {
+            "/reg_warehouse",
+            "/complex_by_post_code"});
+            this.cbMethodName.Location = new System.Drawing.Point(806, 31);
+            this.cbMethodName.Name = "cbMethodName";
+            this.cbMethodName.Size = new System.Drawing.Size(131, 21);
+            this.cbMethodName.TabIndex = 26;
+            this.cbMethodName.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // btnKeyTitles
             // 
@@ -148,11 +163,11 @@
             // 
             // tbBaseAddress
             // 
-            this.tbBaseAddress.Enabled = false;
             this.tbBaseAddress.Location = new System.Drawing.Point(943, 5);
             this.tbBaseAddress.Name = "tbBaseAddress";
             this.tbBaseAddress.Size = new System.Drawing.Size(118, 20);
             this.tbBaseAddress.TabIndex = 1;
+            this.tbBaseAddress.TextChanged += new System.EventHandler(this.tbBaseAddress_TextChanged);
             // 
             // label7
             // 
@@ -173,7 +188,7 @@
             this.miMgmt,
             this.miReport,
             this.miErrorMgtm,
-            this.تستاستعلامToolStripMenuItem});
+            this.miEstelamTest});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -217,6 +232,13 @@
             this.miErrorMgtm.Text = "مرتب سازی خطاها";
             this.miErrorMgtm.Click += new System.EventHandler(this.miErrorMgtm_Click);
             // 
+            // miEstelamTest
+            // 
+            this.miEstelamTest.Name = "miEstelamTest";
+            this.miEstelamTest.Size = new System.Drawing.Size(76, 20);
+            this.miEstelamTest.Text = "تست استعلام";
+            this.miEstelamTest.Click += new System.EventHandler(this.miEstelamTest_Click);
+            // 
             // pnlmain
             // 
             this.pnlmain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -224,12 +246,6 @@
             this.pnlmain.Name = "pnlmain";
             this.pnlmain.Size = new System.Drawing.Size(1000, 500);
             this.pnlmain.TabIndex = 15;
-            // 
-            // تستاستعلامToolStripMenuItem
-            // 
-            this.تستاستعلامToolStripMenuItem.Name = "تستاستعلامToolStripMenuItem";
-            this.تستاستعلامToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
-            this.تستاستعلامToolStripMenuItem.Text = "تست استعلام";
             // 
             // Form1
             // 
@@ -273,7 +289,8 @@
         private System.Windows.Forms.Button btnKeyTitles;
         private System.Windows.Forms.ToolStripMenuItem miReport;
         private System.Windows.Forms.ToolStripMenuItem miErrorMgtm;
-        private System.Windows.Forms.ToolStripMenuItem تستاستعلامToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem miEstelamTest;
+        public System.Windows.Forms.ComboBox cbMethodName;
     }
 }
 

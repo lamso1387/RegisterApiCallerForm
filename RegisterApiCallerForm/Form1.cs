@@ -31,6 +31,7 @@ namespace RegisterApiCallerForm
             
             
             tbRequestUri.Text = "/reg_warehouse";
+            cbMethodName.Text = tbRequestUri.Text;
             tbBaseAddress.Text = "http://app1.nwms.ir/v2/b2b-api/";
             tbApiKey.Text = "0123456789";
 
@@ -160,6 +161,22 @@ namespace RegisterApiCallerForm
             pnlmain.Controls.Clear();
             pnlmain.Controls.Add(new ErrorMgmt());
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tbRequestUri.Text = cbMethodName.Text;
+        }
+
+        private void miEstelamTest_Click(object sender, EventArgs e)
+        {
+            pnlmain.Controls.Clear();
+            pnlmain.Controls.Add(new EstelamTest(this));
+        }
+
+        private void tbBaseAddress_TextChanged(object sender, EventArgs e)
+        {
+            Publics.client.BaseAddress = new Uri(tbBaseAddress.Text);
         }
        
     }

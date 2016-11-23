@@ -7,6 +7,7 @@
     <Schema Namespace="SemnanModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="SemnanModelStoreContainer">
           <EntitySet Name="Anbar" EntityType="SemnanModel.Store.Anbar" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EstelamTime" EntityType="SemnanModel.Store.EstelamTime" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Key" EntityType="SemnanModel.Store.Key" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TimeTaken" EntityType="SemnanModel.Store.TimeTaken" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
@@ -49,6 +50,16 @@
           <Property Name="explain" Type="nvarchar" MaxLength="255" />
           <Property Name="output_result" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="EstelamTime">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="estelam_parallel" Type="int" />
+          <Property Name="estalam_time" Type="float" />
+          <Property Name="estelam_round" Type="int" />
+          <Property Name="output_result" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="Key">
           <Key>
             <PropertyRef Name="ID" />
@@ -72,6 +83,7 @@
           <EntitySet Name="Anbars" EntityType="SemnanModel.Anbar" />
           <EntitySet Name="Keys" EntityType="SemnanModel.Key" />
           <EntitySet Name="TimeTakens" EntityType="SemnanModel.TimeTaken" />
+          <EntitySet Name="EstelamTimes" EntityType="SemnanModel.EstelamTime" />
         </EntityContainer>
         <EntityType Name="Anbar">
           <Key>
@@ -126,6 +138,16 @@
           </Key>
           <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Double" Name="time_taken" />
+        </EntityType>
+        <EntityType Name="EstelamTime">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="estelam_parallel" />
+          <Property Type="Double" Name="estalam_time" />
+          <Property Type="Int32" Name="estelam_round" />
+          <Property Type="String" Name="output_result" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -186,6 +208,17 @@
             <EntityTypeMapping TypeName="SemnanModel.TimeTaken">
               <MappingFragment StoreEntitySet="TimeTaken">
                 <ScalarProperty Name="time_taken" ColumnName="time_taken" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstelamTimes">
+            <EntityTypeMapping TypeName="SemnanModel.EstelamTime">
+              <MappingFragment StoreEntitySet="EstelamTime">
+                <ScalarProperty Name="output_result" ColumnName="output_result" />
+                <ScalarProperty Name="estelam_round" ColumnName="estelam_round" />
+                <ScalarProperty Name="estalam_time" ColumnName="estalam_time" />
+                <ScalarProperty Name="estelam_parallel" ColumnName="estelam_parallel" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

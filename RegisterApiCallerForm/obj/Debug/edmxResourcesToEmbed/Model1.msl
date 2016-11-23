@@ -58,5 +58,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="EstelamTimes">
+      <EntityTypeMapping TypeName="SemnanModel.EstelamTime">
+        <MappingFragment StoreEntitySet="EstelamTime">
+          <ScalarProperty Name="output_result" ColumnName="output_result" />
+          <ScalarProperty Name="estelam_round" ColumnName="estelam_round" />
+          <ScalarProperty Name="estalam_time" ColumnName="estalam_time" />
+          <ScalarProperty Name="estelam_parallel" ColumnName="estelam_parallel" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -2,6 +2,7 @@
 <Schema Namespace="SemnanModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="SemnanModelStoreContainer">
     <EntitySet Name="Anbar" EntityType="SemnanModel.Store.Anbar" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EstelamTime" EntityType="SemnanModel.Store.EstelamTime" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Key" EntityType="SemnanModel.Store.Key" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TimeTaken" EntityType="SemnanModel.Store.TimeTaken" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
@@ -42,6 +43,16 @@
     <Property Name="last_sent" Type="datetime" />
     <Property Name="tag" Type="nvarchar" MaxLength="50" />
     <Property Name="explain" Type="nvarchar" MaxLength="255" />
+    <Property Name="output_result" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="EstelamTime">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="estelam_parallel" Type="int" />
+    <Property Name="estalam_time" Type="float" />
+    <Property Name="estelam_round" Type="int" />
     <Property Name="output_result" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Key">

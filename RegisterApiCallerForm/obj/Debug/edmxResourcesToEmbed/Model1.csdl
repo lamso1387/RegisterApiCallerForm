@@ -4,6 +4,7 @@
     <EntitySet Name="Anbars" EntityType="SemnanModel.Anbar" />
     <EntitySet Name="Keys" EntityType="SemnanModel.Key" />
     <EntitySet Name="TimeTakens" EntityType="SemnanModel.TimeTaken" />
+    <EntitySet Name="EstelamTimes" EntityType="SemnanModel.EstelamTime" />
   </EntityContainer>
   <EntityType Name="Anbar">
     <Key>
@@ -58,5 +59,15 @@
     </Key>
     <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Type="Double" Name="time_taken" />
+  </EntityType>
+  <EntityType Name="EstelamTime">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="estelam_parallel" />
+    <Property Type="Double" Name="estalam_time" />
+    <Property Type="Int32" Name="estelam_round" />
+    <Property Type="String" Name="output_result" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

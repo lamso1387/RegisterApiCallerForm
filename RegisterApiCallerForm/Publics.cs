@@ -39,7 +39,7 @@ namespace RegisterApiCallerForm
             loading.lblSrart.Text = DateTime.Now.ToString();
             loading.lblLoading.Text = " در حال ارسال  " + all + " رکورد بصورت  " + parallel + "کانال موازی ...";
             loading.Text = from;
-            TruncateTimeTable(db);
+            TruncateTimeTable(db, "TimeTaken");
             Publics.stopLoop = false;
             List<Task> task_list = new List<Task>();
             int per_count = int.Parse(parallel);
@@ -262,9 +262,9 @@ namespace RegisterApiCallerForm
             chart.DataSource = query.ToList();
             chart.DataBind();
         }
-        private static void TruncateTimeTable(SemnanEntities3 db)
+        public static void TruncateTimeTable(SemnanEntities3 db, string table_name)
         {
-            db.Database.ExecuteSqlCommand("truncate table TimeTaken");
+            db.Database.ExecuteSqlCommand("truncate table "+table_name);
             db.SaveChanges();
         }
         public static void ExportToExcell(DataGridView dgview)

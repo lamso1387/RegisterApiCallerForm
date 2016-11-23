@@ -78,6 +78,15 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="App_Start\NHibernateProfilerBootstrapper.cs" />
+    <Compile Include="EstelamTime.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\EstelamTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Menu\EstelamTest.Designer.cs">
+      <DependentUpon>EstelamTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu\ErrorMgmt.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -162,6 +171,9 @@
     <Compile Include="Menu\SingleTest.Designer.cs">
       <DependentUpon>SingleTest.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Menu\EstelamTest.resx">
+      <DependentUpon>EstelamTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu\ErrorMgmt.resx">
       <DependentUpon>ErrorMgmt.cs</DependentUpon>
     </EmbeddedResource>
