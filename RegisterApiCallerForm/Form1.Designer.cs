@@ -46,6 +46,7 @@
             this.miReport = new System.Windows.Forms.ToolStripMenuItem();
             this.miErrorMgtm = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlmain = new System.Windows.Forms.Panel();
+            this.تستاستعلامToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -171,7 +172,8 @@
             this.miSendDB,
             this.miMgmt,
             this.miReport,
-            this.miErrorMgtm});
+            this.miErrorMgtm,
+            this.تستاستعلامToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -223,6 +225,12 @@
             this.pnlmain.Size = new System.Drawing.Size(1000, 500);
             this.pnlmain.TabIndex = 15;
             // 
+            // تستاستعلامToolStripMenuItem
+            // 
+            this.تستاستعلامToolStripMenuItem.Name = "تستاستعلامToolStripMenuItem";
+            this.تستاستعلامToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.تستاستعلامToolStripMenuItem.Text = "تست استعلام";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,6 +273,7 @@
         private System.Windows.Forms.Button btnKeyTitles;
         private System.Windows.Forms.ToolStripMenuItem miReport;
         private System.Windows.Forms.ToolStripMenuItem miErrorMgtm;
+        private System.Windows.Forms.ToolStripMenuItem تستاستعلامToolStripMenuItem;
     }
 }
 

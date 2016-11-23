@@ -237,7 +237,7 @@ namespace RegisterApiCallerForm
 
             public static IQueryable<Anbar> AnbarsWithError(SemnanEntities3 db)
             {
-                return db.Anbars.Where(x => x.error != null);
+                return db.Anbars.Where(x => x.error != null && x.error !="");
             }
             
             
@@ -267,6 +267,33 @@ namespace RegisterApiCallerForm
             db.Database.ExecuteSqlCommand("truncate table TimeTaken");
             db.SaveChanges();
         }
+        public static void ExportToExcell(DataGridView dgview)
+        {
 
+            Loading loading = new Loading();
+            loading.lblLoading.Text = "در حال اکسل سازی";
+            loading.lblTime.Text = "";
+            loading.dataGridView1.Visible = false;
+            loading.Show();
+            DataSet ds = new DataSet();
+            DataTable table = new DataTable("DataFromDGV");
+            ds.Tables.Add(table);
+            foreach (DataGridViewColumn col in dgview.Columns)
+                table.Columns.Add(col.HeaderText, typeof(string));
+            foreach (DataGridViewRow row in dgview.Rows)
+            {
+                Application.DoEvents();
+                table.Rows.Add();
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    Application.DoEvents();
+                    table.Rows[row.Index][cell.ColumnIndex] =  cell.Value ;
+                    loading.lblLoading.Text = "در حال اکسلینگ ردیف " + row.Index;
+                }
+            }
+            ExcelLibrary.DataSetHelper.CreateWorkbook(@"C:\Users\project\Desktop\exported.xls", ds);
+            loading.lblLoading.Text = "خروجی در مسیر دسکتاپ انجام شد";
+            loading.btnClose.Enabled = true;
+        }
     }
 }
