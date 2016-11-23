@@ -21,7 +21,6 @@ namespace RegisterApiCallerForm
         {
             InitializeComponent();
             form1 = f;
-            form1.tbRequestUri.Text = form1.cbMethodName.Text + "/" + tbPostalCode.Text;
         }
 
         private void btnSend_Click(object sender, EventArgs e)
@@ -44,7 +43,7 @@ namespace RegisterApiCallerForm
             Publics.TruncateTimeTable(db,"EstelamTime");
             Publics.stopLoop = false;
           
-            for (int j = 0; j < round; j++)
+            for (int j = 1; j < (round+1); j++)
             {
                 Application.DoEvents();
                 if (Publics.stopLoop) break;
@@ -52,14 +51,15 @@ namespace RegisterApiCallerForm
                 ParallelSend(parallel,j);
 
             }
-         
 
-            loading.lblLoading.Text = " تعداد  " + round + " مرتبه ارسال انجام شد در  " + parallel + "  کانال موازی " + "\n";
+
+            loading.lblLoading.Text = " ارسال موازی در   " + parallel + "  کانال انجام شد در   " + round + "  مرتبه   ";
             loading.lblEnd.Text = DateTime.Now.ToString();
             loading.Text += "-done";
             loading.btnClose.Enabled = true;
             btnSee.PerformClick();
-            lblTime.Text = db.EstelamTimes.Where(x=> x.ID != 1).Select(x => x.estalam_time).Average().ToString();
+            lblTime.Text = db.EstelamTimes.Select(x => x.estalam_time).Average().ToString();
+            loading.Close();
             
         }
         private void ParallelSend(int parallel, int round)
@@ -89,11 +89,12 @@ namespace RegisterApiCallerForm
 
         private void InsertIntoEstelamTime( string result, double time_taken, int parallel, int round)
         {
+           
             EstelamTime estelam_time = new EstelamTime();
             estelam_time.estalam_time = time_taken;
             estelam_time.estelam_parallel = parallel;
             estelam_time.estelam_round = round;
-            estelam_time.output_result = result;
+            estelam_time.output_result = System.Text.RegularExpressions.Regex.Unescape(result); 
             SemnanEntities3 db = new SemnanEntities3();
             db.EstelamTimes.Add(estelam_time);
             db.SaveChanges();
@@ -102,7 +103,8 @@ namespace RegisterApiCallerForm
 
         private void tbPostalCode_TextChanged(object sender, EventArgs e)
         {
-            form1.tbRequestUri.Text =form1.cbMethodName.Text+ "/"+ tbPostalCode.Text;
+            if (string.IsNullOrWhiteSpace(tbPostalCode.Text)) form1.tbRequestUri.Text = form1.cbMethodName.Text;
+            else form1.tbRequestUri.Text =form1.cbMethodName.Text+ "/"+ tbPostalCode.Text;
         }
 
         private void btnSee_Click(object sender, EventArgs e)

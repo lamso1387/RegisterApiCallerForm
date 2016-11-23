@@ -27,11 +27,7 @@ namespace RegisterApiCallerForm
         {
             InitializeComponent();
 
-          
-            
-            
-            tbRequestUri.Text = "/reg_warehouse";
-            cbMethodName.Text = tbRequestUri.Text;
+            cbMethodName.SelectedIndex = 0;
             tbBaseAddress.Text = "http://app1.nwms.ir/v2/b2b-api/";
             tbApiKey.Text = "0123456789";
 
