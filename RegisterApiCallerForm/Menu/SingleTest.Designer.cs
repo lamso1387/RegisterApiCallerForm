@@ -485,21 +485,21 @@
             // 
             // btnEpoch
             // 
-            this.btnEpoch.Location = new System.Drawing.Point(644, 456);
+            this.btnEpoch.Location = new System.Drawing.Point(922, 474);
             this.btnEpoch.Name = "btnEpoch";
             this.btnEpoch.Size = new System.Drawing.Size(75, 23);
             this.btnEpoch.TabIndex = 20;
-            this.btnEpoch.Text = "epoch";
+            this.btnEpoch.Text = "epoch time tester";
             this.btnEpoch.UseVisualStyleBackColor = true;
             this.btnEpoch.Click += new System.EventHandler(this.btnEpoch_Click);
             // 
             // btnRegWarehouse
             // 
-            this.btnRegWarehouse.Location = new System.Drawing.Point(310, 455);
+            this.btnRegWarehouse.Location = new System.Drawing.Point(428, 456);
             this.btnRegWarehouse.Name = "btnRegWarehouse";
-            this.btnRegWarehouse.Size = new System.Drawing.Size(75, 23);
+            this.btnRegWarehouse.Size = new System.Drawing.Size(131, 23);
             this.btnRegWarehouse.TabIndex = 19;
-            this.btnRegWarehouse.Text = "ارسال";
+            this.btnRegWarehouse.Text = "ارسال برای ثبت نام";
             this.btnRegWarehouse.UseVisualStyleBackColor = true;
             this.btnRegWarehouse.Click += new System.EventHandler(this.btnRegWarehouse_Click_1);
             // 

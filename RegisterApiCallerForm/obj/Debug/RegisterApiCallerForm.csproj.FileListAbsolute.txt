@@ -180,3 +180,6 @@ C:\Users\lamso1387\Documents\Visual Studio 2012\Projects\g\RegisterApiCallerForm
 C:\Users\project\Documents\Visual Studio 2012\Projects\register_api_caller_form\RegisterApiCallerForm\obj\Debug\RegisterApiCallerForm.EstelamTest.resources
 C:\Users\project\Documents\Visual Studio 2012\Projects\register_api_caller_form\RegisterApiCallerForm\obj\Debug\RegisterApiCallerForm.PostCodeAssignReport.resources
 C:\Users\project\Documents\Visual Studio 2012\Projects\register_api_caller_form\RegisterApiCallerForm\obj\Debug\RegisterApiCallerForm.PrepareData.resources
+C:\Users\lamso1387\Documents\Visual Studio 2012\Projects\register\RegisterApiCallerForm\bin\Debug\RegisterApiCallerForm.exe.config
+C:\Users\lamso1387\Documents\Visual Studio 2012\Projects\register\RegisterApiCallerForm\obj\Debug\RegisterApiCallerForm.exe
+C:\Users\lamso1387\Documents\Visual Studio 2012\Projects\register\RegisterApiCallerForm\obj\Debug\RegisterApiCallerForm.pdb

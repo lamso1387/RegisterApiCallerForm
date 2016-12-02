@@ -48,8 +48,8 @@
             this.miErrorMgtm = new System.Windows.Forms.ToolStripMenuItem();
             this.miEstelamTest = new System.Windows.Forms.ToolStripMenuItem();
             this.miPostCodeAssignReport = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlmain = new System.Windows.Forms.Panel();
             this.miPrepareDate = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlmain = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -88,18 +88,18 @@
             // 
             // btnKeyTitles
             // 
-            this.btnKeyTitles.Location = new System.Drawing.Point(943, 56);
+            this.btnKeyTitles.Location = new System.Drawing.Point(885, 55);
             this.btnKeyTitles.Name = "btnKeyTitles";
-            this.btnKeyTitles.Size = new System.Drawing.Size(20, 23);
+            this.btnKeyTitles.Size = new System.Drawing.Size(52, 23);
             this.btnKeyTitles.TabIndex = 25;
-            this.btnKeyTitles.Text = "...";
+            this.btnKeyTitles.Text = "انتخاب";
             this.btnKeyTitles.UseVisualStyleBackColor = true;
             this.btnKeyTitles.Click += new System.EventHandler(this.btnKeyTitles_Click);
             // 
             // lblKeyTitle
             // 
             this.lblKeyTitle.AutoSize = true;
-            this.lblKeyTitle.Location = new System.Drawing.Point(941, 84);
+            this.lblKeyTitle.Location = new System.Drawing.Point(882, 81);
             this.lblKeyTitle.Name = "lblKeyTitle";
             this.lblKeyTitle.Size = new System.Drawing.Size(78, 13);
             this.lblKeyTitle.TabIndex = 24;
@@ -124,24 +124,24 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(83, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 13);
+            this.label1.Size = new System.Drawing.Size(189, 13);
             this.label1.TabIndex = 22;
-            this.label1.Text = "ارسال پیامک در صورت نقص";
+            this.label1.Text = "ارسال پیامک در صورت نقص برای ثبت نام";
             // 
             // key
             // 
             this.key.AutoSize = true;
-            this.key.Location = new System.Drawing.Point(1072, 60);
+            this.key.Location = new System.Drawing.Point(1067, 61);
             this.key.Name = "key";
-            this.key.Size = new System.Drawing.Size(24, 13);
+            this.key.Size = new System.Drawing.Size(41, 13);
             this.key.TabIndex = 5;
-            this.key.Text = "key";
+            this.key.Text = "api-key";
             // 
             // tbApiKey
             // 
-            this.tbApiKey.Location = new System.Drawing.Point(966, 57);
+            this.tbApiKey.Location = new System.Drawing.Point(943, 57);
             this.tbApiKey.Name = "tbApiKey";
-            this.tbApiKey.Size = new System.Drawing.Size(95, 20);
+            this.tbApiKey.Size = new System.Drawing.Size(118, 20);
             this.tbApiKey.TabIndex = 4;
             this.tbApiKey.TextChanged += new System.EventHandler(this.tbApiKey_TextChanged);
             this.tbApiKey.Leave += new System.EventHandler(this.tbApiKey_Leave);
@@ -165,9 +165,9 @@
             // 
             // tbBaseAddress
             // 
-            this.tbBaseAddress.Location = new System.Drawing.Point(943, 5);
+            this.tbBaseAddress.Location = new System.Drawing.Point(806, 5);
             this.tbBaseAddress.Name = "tbBaseAddress";
-            this.tbBaseAddress.Size = new System.Drawing.Size(118, 20);
+            this.tbBaseAddress.Size = new System.Drawing.Size(255, 20);
             this.tbBaseAddress.TabIndex = 1;
             this.tbBaseAddress.TextChanged += new System.EventHandler(this.tbBaseAddress_TextChanged);
             // 
@@ -203,8 +203,8 @@
             // miSingleTest
             // 
             this.miSingleTest.Name = "miSingleTest";
-            this.miSingleTest.Size = new System.Drawing.Size(67, 20);
-            this.miSingleTest.Text = "تست نمونه";
+            this.miSingleTest.Size = new System.Drawing.Size(124, 20);
+            this.miSingleTest.Text = "تست سرویس ثبت نام";
             this.miSingleTest.Click += new System.EventHandler(this.miSingleTest_Click);
             // 
             // miSendDB
@@ -218,37 +218,44 @@
             // miMgmt
             // 
             this.miMgmt.Name = "miMgmt";
-            this.miMgmt.Size = new System.Drawing.Size(130, 20);
+            this.miMgmt.Size = new System.Drawing.Size(141, 20);
             this.miMgmt.Text = "مدیریت و ارسال اطلاعات";
             this.miMgmt.Click += new System.EventHandler(this.miMgmt_Click);
             // 
             // miReport
             // 
             this.miReport.Name = "miReport";
-            this.miReport.Size = new System.Drawing.Size(49, 20);
+            this.miReport.Size = new System.Drawing.Size(50, 20);
             this.miReport.Text = "گزارش";
             this.miReport.Click += new System.EventHandler(this.miReport_Click);
             // 
             // miErrorMgtm
             // 
             this.miErrorMgtm.Name = "miErrorMgtm";
-            this.miErrorMgtm.Size = new System.Drawing.Size(105, 20);
+            this.miErrorMgtm.Size = new System.Drawing.Size(108, 20);
             this.miErrorMgtm.Text = "مرتب سازی خطاها";
             this.miErrorMgtm.Click += new System.EventHandler(this.miErrorMgtm_Click);
             // 
             // miEstelamTest
             // 
             this.miEstelamTest.Name = "miEstelamTest";
-            this.miEstelamTest.Size = new System.Drawing.Size(76, 20);
+            this.miEstelamTest.Size = new System.Drawing.Size(85, 20);
             this.miEstelamTest.Text = "تست استعلام";
             this.miEstelamTest.Click += new System.EventHandler(this.miEstelamTest_Click);
             // 
             // miPostCodeAssignReport
             // 
             this.miPostCodeAssignReport.Name = "miPostCodeAssignReport";
-            this.miPostCodeAssignReport.Size = new System.Drawing.Size(131, 20);
+            this.miPostCodeAssignReport.Size = new System.Drawing.Size(139, 20);
             this.miPostCodeAssignReport.Text = "گزارش تخصیص کدپستی";
             this.miPostCodeAssignReport.Click += new System.EventHandler(this.miPostCodeAssignReport_Click);
+            // 
+            // miPrepareDate
+            // 
+            this.miPrepareDate.Name = "miPrepareDate";
+            this.miPrepareDate.Size = new System.Drawing.Size(117, 20);
+            this.miPrepareDate.Text = "اماده سازی اطلاعات";
+            this.miPrepareDate.Click += new System.EventHandler(this.miPrepareDate_Click);
             // 
             // pnlmain
             // 
@@ -257,13 +264,6 @@
             this.pnlmain.Name = "pnlmain";
             this.pnlmain.Size = new System.Drawing.Size(1000, 500);
             this.pnlmain.TabIndex = 15;
-            // 
-            // miPrepareDate
-            // 
-            this.miPrepareDate.Name = "miPrepareDate";
-            this.miPrepareDate.Size = new System.Drawing.Size(112, 20);
-            this.miPrepareDate.Text = "اماده سازی اطلاعات";
-            this.miPrepareDate.Click += new System.EventHandler(this.miPrepareDate_Click);
             // 
             // Form1
             // 
