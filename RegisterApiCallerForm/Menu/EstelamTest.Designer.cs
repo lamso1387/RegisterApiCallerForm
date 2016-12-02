@@ -39,6 +39,7 @@
             this.btnSee = new System.Windows.Forms.Button();
             this.dgvSeeTimes = new System.Windows.Forms.DataGridView();
             this.lblTime = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeeTimes)).BeginInit();
             this.SuspendLayout();
@@ -142,10 +143,21 @@
             this.lblTime.TabIndex = 6;
             this.lblTime.Text = "میانگین زمان";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(22, 95);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "sample code";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // EstelamTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.dgvSeeTimes);
             this.Controls.Add(this.btnSee);
@@ -176,5 +188,6 @@
         private System.Windows.Forms.Button btnSee;
         private System.Windows.Forms.DataGridView dgvSeeTimes;
         private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Button button1;
     }
 }

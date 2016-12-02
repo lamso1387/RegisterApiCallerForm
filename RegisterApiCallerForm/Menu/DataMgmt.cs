@@ -231,7 +231,7 @@ namespace RegisterApiCallerForm
         private void btnExcel_Click(object sender, EventArgs e)
         {
             Publics.ButtonLoading(btnSearch_Click);
-            Publics.ExportToExcell(dgv);
+            Publics.ExcelMake.ExportToExcell(dgv, 2000);
             
         }
 

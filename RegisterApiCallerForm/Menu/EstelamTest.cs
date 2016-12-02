@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Http;
 using System.Diagnostics;
+using System.Net.Http.Headers;
 
 namespace RegisterApiCallerForm
 {
@@ -110,6 +111,17 @@ namespace RegisterApiCallerForm
         private void btnSee_Click(object sender, EventArgs e)
         {
             dgvSeeTimes.DataSource = new SemnanEntities3().EstelamTimes.Select(x => x).ToList();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           HttpClient client = new HttpClient();
+           client.BaseAddress = new Uri("http://app1.nwms.ir/v2/b2b-api/");
+           client.DefaultRequestHeaders.Accept.Clear();
+           client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+           var result = client.GetAsync("0123456789" + "/complex_by_post_code/4713644457").Result.Content.ReadAsStringAsync().Result;
+           var result_encode = System.Text.RegularExpressions.Regex.Unescape(result);
+           MessageBox.Show(result_encode);
         }
     }
 }

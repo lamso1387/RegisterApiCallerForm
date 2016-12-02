@@ -174,6 +174,12 @@ namespace RegisterApiCallerForm
         {
             Publics.client.BaseAddress = new Uri(tbBaseAddress.Text);
         }
+
+        private void miPostCodeAssignReport_Click(object sender, EventArgs e)
+        {
+            pnlmain.Controls.Clear();
+            pnlmain.Controls.Add(new PostCodeAssignReport(this));
+        }
        
     }
 }

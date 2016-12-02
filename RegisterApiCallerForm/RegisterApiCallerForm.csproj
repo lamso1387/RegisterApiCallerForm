@@ -99,6 +99,12 @@
     <Compile Include="Menu\Report.Designer.cs">
       <DependentUpon>Report.cs</DependentUpon>
     </Compile>
+    <Compile Include="PostCodeAssignReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PostCodeAssignReport.Designer.cs">
+      <DependentUpon>PostCodeAssignReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="TimeTaken.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menu\Report.resx">
       <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PostCodeAssignReport.resx">
+      <DependentUpon>PostCodeAssignReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\ErrorGroup.resx">
       <DependentUpon>ErrorGroup.cs</DependentUpon>

@@ -267,33 +267,66 @@ namespace RegisterApiCallerForm
             db.Database.ExecuteSqlCommand("truncate table "+table_name);
             db.SaveChanges();
         }
-        public static void ExportToExcell(DataGridView dgview)
-        {
 
-            Loading loading = new Loading();
-            loading.lblLoading.Text = "در حال اکسل سازی";
-            loading.lblTime.Text = "";
-            loading.dataGridView1.Visible = false;
-            loading.Show();
-            DataSet ds = new DataSet();
-            DataTable table = new DataTable("DataFromDGV");
-            ds.Tables.Add(table);
-            foreach (DataGridViewColumn col in dgview.Columns)
-                table.Columns.Add(col.HeaderText, typeof(string));
-            foreach (DataGridViewRow row in dgview.Rows)
+        public static class ExcelMake
+        {
+            public static  void ExportToExcell(DataGridView dgview, int devider)
+            {              
+                Loading loading = new Loading();
+                loading.lblLoading.Text = "در حال اکسل سازی";
+                loading.lblTime.Text = "";
+                loading.dataGridView1.Visible = false;
+                loading.Show();
+                loading.lblLoading.Text = "در حال اکسلینگ ردیف ";
+                DataSet ds = new DataSet();
+                int table_count = dgview.Rows.Count / devider;
+                int index = 0;
+                for (int i = 0; i < table_count; i++)
+                {
+                    DataTable table = new DataTable(i.ToString());
+                    ds.Tables.Add(table);
+                    MakeDataTable(dgview, table, devider,index);
+                    index += devider;
+                }
+                DataTable _table = new DataTable("else");
+                ds.Tables.Add(_table);
+                MakeDataTable(dgview, _table, devider, index);
+                
+                ExcelLibrary.DataSetHelper.CreateWorkbook(@"C:\Users\project\Desktop\exported.xls", ds);
+                loading.lblLoading.Text = "خروجی در مسیر دسکتاپ انجام شد";
+                loading.btnClose.Enabled = true;
+                loading.Close();
+            }
+
+            private static void MakeDataTable(DataGridView dgview, DataTable table, int devider, int index)
             {
-                Application.DoEvents();
-                table.Rows.Add();
-                foreach (DataGridViewCell cell in row.Cells)
+                              
+                foreach (DataGridViewColumn col in dgview.Columns)
+                    table.Columns.Add(col.HeaderText, typeof(string));
+
+                int row_index = 0;
+                foreach (DataGridViewRow row in dgview.Rows)
                 {
                     Application.DoEvents();
-                    table.Rows[row.Index][cell.ColumnIndex] =  cell.Value ;
-                    loading.lblLoading.Text = "در حال اکسلینگ ردیف " + row.Index;
+                    if (row.Index < index) continue;
+                    if (row.Index > index+devider-1) break;
+                    table.Rows.Add();
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        Application.DoEvents();
+
+                        table.Rows[row_index][cell.ColumnIndex] = cell.Value;
+                        
+                    }
+                    row_index++;
+                }
+
+                int rowLeft = 45 - table.Rows.Count ;
+                for (int i = 0; i < rowLeft; i++)
+                {
+                 table.Rows.Add();
                 }
             }
-            ExcelLibrary.DataSetHelper.CreateWorkbook(@"C:\Users\project\Desktop\exported.xls", ds);
-            loading.lblLoading.Text = "خروجی در مسیر دسکتاپ انجام شد";
-            loading.btnClose.Enabled = true;
         }
     }
 }

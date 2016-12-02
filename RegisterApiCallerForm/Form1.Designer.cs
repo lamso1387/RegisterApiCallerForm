@@ -48,6 +48,7 @@
             this.miErrorMgtm = new System.Windows.Forms.ToolStripMenuItem();
             this.miEstelamTest = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlmain = new System.Windows.Forms.Panel();
+            this.miPostCodeAssignReport = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -188,7 +189,8 @@
             this.miMgmt,
             this.miReport,
             this.miErrorMgtm,
-            this.miEstelamTest});
+            this.miEstelamTest,
+            this.miPostCodeAssignReport});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -247,6 +249,13 @@
             this.pnlmain.Size = new System.Drawing.Size(1000, 500);
             this.pnlmain.TabIndex = 15;
             // 
+            // miPostCodeAssignReport
+            // 
+            this.miPostCodeAssignReport.Name = "miPostCodeAssignReport";
+            this.miPostCodeAssignReport.Size = new System.Drawing.Size(131, 20);
+            this.miPostCodeAssignReport.Text = "گزارش تخصیص کدپستی";
+            this.miPostCodeAssignReport.Click += new System.EventHandler(this.miPostCodeAssignReport_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -291,6 +300,7 @@
         private System.Windows.Forms.ToolStripMenuItem miErrorMgtm;
         private System.Windows.Forms.ToolStripMenuItem miEstelamTest;
         public System.Windows.Forms.ComboBox cbMethodName;
+        private System.Windows.Forms.ToolStripMenuItem miPostCodeAssignReport;
     }
 }
 

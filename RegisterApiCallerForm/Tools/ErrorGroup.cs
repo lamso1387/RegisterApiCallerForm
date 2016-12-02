@@ -25,18 +25,31 @@ namespace RegisterApiCallerForm
         private void ErrorGroup_Load(object sender, EventArgs e)
         {
             var errors = query.Intersect(Publics.AnbarStatus.AnbarsSentNotRegistered(db))
-                .GroupBy(x => new { x.output_result, x.error_farsi }).Select(x => new { error = x.Key.output_result, farsi = x.Key.error_farsi, count = x.Count(), type = "output_result" }).Union(
-                 query.Intersect(Publics.AnbarStatus.AnbarsWithError(db))
-               .GroupBy(x => new { x.error, x.error_farsi }).Select(x => new { error = x.Key.error, farsi = x.Key.error_farsi, count = x.Count(), type = "error" })          
-               );
+                     .GroupBy(x => new { x.output_result, x.error_farsi })
+                 .Select(x => new { error = x.Key.output_result, farsi = x.Key.error_farsi, count = x.Count(), type = "output_result" })
+              .Union(
+                   query.Intersect(Publics.AnbarStatus.AnbarsWithError(db))
+                .GroupBy(x => new { x.error, x.error_farsi })
+             .Select(x => new { error = x.Key.error, farsi = x.Key.error_farsi, count = x.Count(), type = "error" })
+                 );
+
+
             dgv.DataSource = errors.ToList();
 
+            
          
         }
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-           // Publics.ExportToExcell(dgvExport);
+        
+
+            Publics.ExcelMake.ExportToExcell(dgv,2000);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
