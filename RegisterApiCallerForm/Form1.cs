@@ -180,6 +180,12 @@ namespace RegisterApiCallerForm
             pnlmain.Controls.Clear();
             pnlmain.Controls.Add(new PostCodeAssignReport(this));
         }
+
+        private void miPrepareDate_Click(object sender, EventArgs e)
+        {
+            pnlmain.Controls.Clear();
+            pnlmain.Controls.Add(new PrepareData(this));
+        }
        
     }
 }

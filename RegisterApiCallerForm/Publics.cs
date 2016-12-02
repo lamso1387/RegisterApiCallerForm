@@ -109,8 +109,18 @@ namespace RegisterApiCallerForm
 
         private static Dictionary<string, object> CreateInputFromDB(Dictionary<string, object> input, Anbar DBitem)
         {
-            if (!string.IsNullOrWhiteSpace(DBitem.national_id)) input.Add("national_id", DBitem.national_id);
-            if (!string.IsNullOrWhiteSpace(DBitem.mobile)) input.Add("mobile", DBitem.mobile);
+            if (!string.IsNullOrWhiteSpace(DBitem.national_id)) 
+            {
+                string national_id=DBitem.national_id;
+                national_id = national_id.Length == 8 ? "00" + national_id : (national_id.Length == 9 ? "0" + national_id :  national_id);
+                input.Add("national_id", national_id);
+            }
+            if (!string.IsNullOrWhiteSpace(DBitem.mobile))
+            {
+                string mobile = DBitem.mobile;
+                mobile = mobile.Length == 10 ? "0" + mobile : mobile;
+                input.Add("mobile", mobile);
+            }
             if (!string.IsNullOrWhiteSpace(DBitem.name)) input.Add("name", DBitem.name);
             if (!string.IsNullOrWhiteSpace(DBitem.postal_code)) input.Add("postal_code", DBitem.postal_code);
             input.Add("contractor_or_agent", DBitem.contractor_or_agent);
