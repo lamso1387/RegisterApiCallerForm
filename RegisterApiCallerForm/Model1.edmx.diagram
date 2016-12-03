@@ -9,6 +9,7 @@
         <EntityTypeShape EntityType="SemnanModel.Key" Width="1.5" PointX="3.2247657474245717" PointY="1.2465477293574008" />
         <EntityTypeShape EntityType="SemnanModel.TimeTaken" Width="1.5" PointX="0.7679399721175153" PointY="18.749044188647087" />
         <EntityTypeShape EntityType="SemnanModel.EstelamTime" Width="1.5" PointX="5.7573367533075324" PointY="6.1781518190066107" />
+        <EntityTypeShape EntityType="SemnanModel.countround" Width="1.5" PointX="0.27000354801770465" PointY="17.724210836796189" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

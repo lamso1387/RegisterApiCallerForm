@@ -7,6 +7,7 @@
     <Schema Namespace="SemnanModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="SemnanModelStoreContainer">
           <EntitySet Name="Anbar" EntityType="SemnanModel.Store.Anbar" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="countround" EntityType="SemnanModel.Store.countround" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="EstelamTime" EntityType="SemnanModel.Store.EstelamTime" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Key" EntityType="SemnanModel.Store.Key" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TimeTaken" EntityType="SemnanModel.Store.TimeTaken" store:Type="Tables" Schema="dbo" />
@@ -50,6 +51,17 @@
           <Property Name="explain" Type="nvarchar" MaxLength="255" />
           <Property Name="output_result" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="countround">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="round" Type="int" />
+          <Property Name="time_taken" Type="float" />
+          <Property Name="counter" Type="int" />
+          <Property Name="message" Type="nvarchar(max)" />
+          <Property Name="input_type" Type="nvarchar" MaxLength="255" />
+        </EntityType>
         <EntityType Name="EstelamTime">
           <Key>
             <PropertyRef Name="ID" />
@@ -84,6 +96,7 @@
           <EntitySet Name="Keys" EntityType="SemnanModel.Key" />
           <EntitySet Name="TimeTakens" EntityType="SemnanModel.TimeTaken" />
           <EntitySet Name="EstelamTimes" EntityType="SemnanModel.EstelamTime" />
+          <EntitySet Name="countrounds" EntityType="SemnanModel.countround" />
         </EntityContainer>
         <EntityType Name="Anbar">
           <Key>
@@ -148,6 +161,17 @@
           <Property Type="Double" Name="estalam_time" />
           <Property Type="Int32" Name="estelam_round" />
           <Property Type="String" Name="output_result" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="countround">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="round" />
+          <Property Type="Double" Name="time_taken" />
+          <Property Type="Int32" Name="counter" />
+          <Property Type="String" Name="message" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="input_type" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -219,6 +243,18 @@
                 <ScalarProperty Name="estelam_round" ColumnName="estelam_round" />
                 <ScalarProperty Name="estalam_time" ColumnName="estalam_time" />
                 <ScalarProperty Name="estelam_parallel" ColumnName="estelam_parallel" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="countrounds">
+            <EntityTypeMapping TypeName="SemnanModel.countround">
+              <MappingFragment StoreEntitySet="countround">
+                <ScalarProperty Name="input_type" ColumnName="input_type" />
+                <ScalarProperty Name="message" ColumnName="message" />
+                <ScalarProperty Name="counter" ColumnName="counter" />
+                <ScalarProperty Name="time_taken" ColumnName="time_taken" />
+                <ScalarProperty Name="round" ColumnName="round" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

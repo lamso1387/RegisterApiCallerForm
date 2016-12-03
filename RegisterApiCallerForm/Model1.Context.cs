@@ -29,5 +29,6 @@ namespace RegisterApiCallerForm
         public DbSet<Key> Keys { get; set; }
         public DbSet<TimeTaken> TimeTakens { get; set; }
         public DbSet<EstelamTime> EstelamTimes { get; set; }
+        public DbSet<countround> countrounds { get; set; }
     }
 }

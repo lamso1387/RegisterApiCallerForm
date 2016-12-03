@@ -2,6 +2,7 @@
 <Schema Namespace="SemnanModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="SemnanModelStoreContainer">
     <EntitySet Name="Anbar" EntityType="SemnanModel.Store.Anbar" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="countround" EntityType="SemnanModel.Store.countround" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="EstelamTime" EntityType="SemnanModel.Store.EstelamTime" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Key" EntityType="SemnanModel.Store.Key" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TimeTaken" EntityType="SemnanModel.Store.TimeTaken" store:Type="Tables" Schema="dbo" />
@@ -44,6 +45,17 @@
     <Property Name="tag" Type="nvarchar" MaxLength="50" />
     <Property Name="explain" Type="nvarchar" MaxLength="255" />
     <Property Name="output_result" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="countround">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="round" Type="int" />
+    <Property Name="time_taken" Type="float" />
+    <Property Name="counter" Type="int" />
+    <Property Name="message" Type="nvarchar(max)" />
+    <Property Name="input_type" Type="nvarchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="EstelamTime">
     <Key>

@@ -27,9 +27,10 @@ namespace RegisterApiCallerForm
         {
             InitializeComponent();
 
-            cbMethodName.SelectedIndex = 0;
+            
             tbBaseAddress.Text = "http://app1.nwms.ir/v2/b2b-api/";
             tbApiKey.Text = "2050130351";
+            tbRequestUri.Text = "/reg_warehouse";
 
             Publics.apiKey = tbApiKey.Text;
             Publics.uri = tbRequestUri.Text;
@@ -157,7 +158,7 @@ namespace RegisterApiCallerForm
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tbRequestUri.Text = cbMethodName.Text;
+            
         }
 
         private void miEstelamTest_Click(object sender, EventArgs e)

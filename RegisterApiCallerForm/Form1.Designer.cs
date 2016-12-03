@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.cbMethodName = new System.Windows.Forms.ComboBox();
+            this.pnlSetting = new System.Windows.Forms.Panel();
             this.btnKeyTitles = new System.Windows.Forms.Button();
             this.lblKeyTitle = new System.Windows.Forms.Label();
             this.cbErrorSMS = new System.Windows.Forms.ComboBox();
@@ -50,41 +49,27 @@
             this.miPostCodeAssignReport = new System.Windows.Forms.ToolStripMenuItem();
             this.miPrepareDate = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlmain = new System.Windows.Forms.Panel();
-            this.panel3.SuspendLayout();
+            this.pnlSetting.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel3
+            // pnlSetting
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.cbMethodName);
-            this.panel3.Controls.Add(this.btnKeyTitles);
-            this.panel3.Controls.Add(this.lblKeyTitle);
-            this.panel3.Controls.Add(this.cbErrorSMS);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.key);
-            this.panel3.Controls.Add(this.tbApiKey);
-            this.panel3.Controls.Add(this.tbRequestUri);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.tbBaseAddress);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Location = new System.Drawing.Point(12, 37);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1120, 113);
-            this.panel3.TabIndex = 6;
-            // 
-            // cbMethodName
-            // 
-            this.cbMethodName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMethodName.FormattingEnabled = true;
-            this.cbMethodName.Items.AddRange(new object[] {
-            "/reg_warehouse",
-            "/complex_by_post_code"});
-            this.cbMethodName.Location = new System.Drawing.Point(806, 31);
-            this.cbMethodName.Name = "cbMethodName";
-            this.cbMethodName.Size = new System.Drawing.Size(131, 21);
-            this.cbMethodName.TabIndex = 26;
-            this.cbMethodName.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.pnlSetting.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlSetting.Controls.Add(this.btnKeyTitles);
+            this.pnlSetting.Controls.Add(this.lblKeyTitle);
+            this.pnlSetting.Controls.Add(this.cbErrorSMS);
+            this.pnlSetting.Controls.Add(this.label1);
+            this.pnlSetting.Controls.Add(this.key);
+            this.pnlSetting.Controls.Add(this.tbApiKey);
+            this.pnlSetting.Controls.Add(this.tbRequestUri);
+            this.pnlSetting.Controls.Add(this.label8);
+            this.pnlSetting.Controls.Add(this.tbBaseAddress);
+            this.pnlSetting.Controls.Add(this.label7);
+            this.pnlSetting.Location = new System.Drawing.Point(12, 37);
+            this.pnlSetting.Name = "pnlSetting";
+            this.pnlSetting.Size = new System.Drawing.Size(1120, 113);
+            this.pnlSetting.TabIndex = 6;
             // 
             // btnKeyTitles
             // 
@@ -203,7 +188,7 @@
             // miSingleTest
             // 
             this.miSingleTest.Name = "miSingleTest";
-            this.miSingleTest.Size = new System.Drawing.Size(124, 20);
+            this.miSingleTest.Size = new System.Drawing.Size(111, 20);
             this.miSingleTest.Text = "تست سرویس ثبت نام";
             this.miSingleTest.Click += new System.EventHandler(this.miSingleTest_Click);
             // 
@@ -218,42 +203,42 @@
             // miMgmt
             // 
             this.miMgmt.Name = "miMgmt";
-            this.miMgmt.Size = new System.Drawing.Size(141, 20);
+            this.miMgmt.Size = new System.Drawing.Size(130, 20);
             this.miMgmt.Text = "مدیریت و ارسال اطلاعات";
             this.miMgmt.Click += new System.EventHandler(this.miMgmt_Click);
             // 
             // miReport
             // 
             this.miReport.Name = "miReport";
-            this.miReport.Size = new System.Drawing.Size(50, 20);
+            this.miReport.Size = new System.Drawing.Size(49, 20);
             this.miReport.Text = "گزارش";
             this.miReport.Click += new System.EventHandler(this.miReport_Click);
             // 
             // miErrorMgtm
             // 
             this.miErrorMgtm.Name = "miErrorMgtm";
-            this.miErrorMgtm.Size = new System.Drawing.Size(108, 20);
+            this.miErrorMgtm.Size = new System.Drawing.Size(105, 20);
             this.miErrorMgtm.Text = "مرتب سازی خطاها";
             this.miErrorMgtm.Click += new System.EventHandler(this.miErrorMgtm_Click);
             // 
             // miEstelamTest
             // 
             this.miEstelamTest.Name = "miEstelamTest";
-            this.miEstelamTest.Size = new System.Drawing.Size(85, 20);
+            this.miEstelamTest.Size = new System.Drawing.Size(76, 20);
             this.miEstelamTest.Text = "تست استعلام";
             this.miEstelamTest.Click += new System.EventHandler(this.miEstelamTest_Click);
             // 
             // miPostCodeAssignReport
             // 
             this.miPostCodeAssignReport.Name = "miPostCodeAssignReport";
-            this.miPostCodeAssignReport.Size = new System.Drawing.Size(139, 20);
+            this.miPostCodeAssignReport.Size = new System.Drawing.Size(131, 20);
             this.miPostCodeAssignReport.Text = "گزارش تخصیص کدپستی";
             this.miPostCodeAssignReport.Click += new System.EventHandler(this.miPostCodeAssignReport_Click);
             // 
             // miPrepareDate
             // 
             this.miPrepareDate.Name = "miPrepareDate";
-            this.miPrepareDate.Size = new System.Drawing.Size(117, 20);
+            this.miPrepareDate.Size = new System.Drawing.Size(112, 20);
             this.miPrepareDate.Text = "اماده سازی اطلاعات";
             this.miPrepareDate.Click += new System.EventHandler(this.miPrepareDate_Click);
             // 
@@ -271,15 +256,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 696);
             this.Controls.Add(this.pnlmain);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.pnlSetting);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.pnlSetting.ResumeLayout(false);
+            this.pnlSetting.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -289,7 +274,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel3;
+        public System.Windows.Forms.Panel pnlSetting;
         public System.Windows.Forms.TextBox tbRequestUri;
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.TextBox tbBaseAddress;
@@ -308,7 +293,6 @@
         private System.Windows.Forms.ToolStripMenuItem miReport;
         private System.Windows.Forms.ToolStripMenuItem miErrorMgtm;
         private System.Windows.Forms.ToolStripMenuItem miEstelamTest;
-        public System.Windows.Forms.ComboBox cbMethodName;
         private System.Windows.Forms.ToolStripMenuItem miPostCodeAssignReport;
         private System.Windows.Forms.ToolStripMenuItem miPrepareDate;
     }

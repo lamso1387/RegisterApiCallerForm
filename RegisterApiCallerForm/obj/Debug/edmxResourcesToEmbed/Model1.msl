@@ -69,5 +69,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="countrounds">
+      <EntityTypeMapping TypeName="SemnanModel.countround">
+        <MappingFragment StoreEntitySet="countround">
+          <ScalarProperty Name="input_type" ColumnName="input_type" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="counter" ColumnName="counter" />
+          <ScalarProperty Name="time_taken" ColumnName="time_taken" />
+          <ScalarProperty Name="round" ColumnName="round" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
