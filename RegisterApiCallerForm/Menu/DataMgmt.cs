@@ -43,6 +43,7 @@ namespace RegisterApiCallerForm
                 .Where(q => cbTag.Text == string.Empty ? true : q.tag == cbTag.Text)
                 .Where(x => dtpFrom.Checked ? (x.last_sent >= dtpFrom.Value) : true)
                 .Where(x => dtpTo.Checked ? (x.last_sent <= dtpTo.Value) : true)
+             //   .Where(x=>chbErrorNull.Checked ? (x.error == null):true)
                ;
 
             if (cbSendStatus.SelectedIndex == 1) query = query.Intersect(Publics.AnbarStatus.AnbarsSent(db));
@@ -54,6 +55,7 @@ namespace RegisterApiCallerForm
             if (cberrorType.Text == "null") query = query.Intersect(Publics.AnbarStatus.AnbarsSentNotRegistered(db)).Where(x => x.output_result == null);
             else if (cberrorType.Text != "select") query = query.Where(y => y.output_result == cberrorType.Text || y.error == cberrorType.Text);
 
+            
             queryList = query.ToList();
             dgv.DataSource = queryList;
             btnCount.PerformClick();
@@ -230,7 +232,7 @@ namespace RegisterApiCallerForm
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-            Publics.ButtonLoading(btnSearch_Click);
+            //Publics.ButtonLoading(btnSearch_Click);
             Publics.ExcelMake.ExportToExcell(dgv, 2000);
             
         }

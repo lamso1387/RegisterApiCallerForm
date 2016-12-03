@@ -99,16 +99,16 @@
     <Compile Include="Menu\Report.Designer.cs">
       <DependentUpon>Report.cs</DependentUpon>
     </Compile>
-    <Compile Include="PostCodeAssignReport.cs">
+    <Compile Include="Menu\PostCodeAssignReport.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PostCodeAssignReport.Designer.cs">
+    <Compile Include="Menu\PostCodeAssignReport.Designer.cs">
       <DependentUpon>PostCodeAssignReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="PrepareData.cs">
+    <Compile Include="Menu\PrepareData.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PrepareData.Designer.cs">
+    <Compile Include="Menu\PrepareData.Designer.cs">
       <DependentUpon>PrepareData.cs</DependentUpon>
     </Compile>
     <Compile Include="TimeTaken.cs">
@@ -192,10 +192,10 @@
     <EmbeddedResource Include="Menu\Report.resx">
       <DependentUpon>Report.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PostCodeAssignReport.resx">
+    <EmbeddedResource Include="Menu\PostCodeAssignReport.resx">
       <DependentUpon>PostCodeAssignReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PrepareData.resx">
+    <EmbeddedResource Include="Menu\PrepareData.resx">
       <DependentUpon>PrepareData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\ErrorGroup.resx">

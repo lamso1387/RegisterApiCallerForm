@@ -25,12 +25,11 @@ namespace RegisterApiCallerForm
             LoadDGVFromExcel();
             
         }
-
-        
+     
 
         private void LoadDGVFromExcel()
         {
-            openFileDialog1.Filter = "Only 97/2003 excel|*.xls";
+            openFileDialog1.Filter = "Only 97/2003 excel with one sheet|*.xls";
             openFileDialog1.ShowDialog();
             lblFileName.Text = openFileDialog1.FileName;
 
@@ -72,6 +71,7 @@ namespace RegisterApiCallerForm
             "output_result"};
             foreach (var file_header in cells.GetRow(cells.FirstRowIndex))
             {
+                Application.DoEvents();
                 if (!main_headers.Contains(file_header.Value.StringValue))
                 {
                     MessageBox.Show(file_header.Value.StringValue + " is not valid.");
@@ -84,6 +84,7 @@ namespace RegisterApiCallerForm
             foreach (var file_header in cells.GetRow(cells.FirstRowIndex)) file_headers.Add(file_header.Value.StringValue);
             foreach (var main_header in main_headers)
             {
+                Application.DoEvents();
                 if (!file_headers.Contains(main_header))
                 {
                     MessageBox.Show("file does not have column: " + main_header );
@@ -98,15 +99,15 @@ namespace RegisterApiCallerForm
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-           InsertDbFromExcel(dataGridView1, new SemnanEntities3());
+           InsertDbFromDGV(dataGridView1, new SemnanEntities3());
         }
 
       
 
-        private static void InsertDbFromExcel(DataGridView dgview, SemnanEntities3 db)
+        private static void InsertDbFromDGV(DataGridView dgview, SemnanEntities3 db)
         {
             Loading loading = new Loading();
-            loading.ShowDialog();
+            loading.Show();
             foreach (DataGridViewRow row in dgview.Rows)
             {
                 Application.DoEvents();
@@ -114,67 +115,69 @@ namespace RegisterApiCallerForm
                 foreach (DataGridViewCell cell in row.Cells)
                 {
                     Application.DoEvents();
+                    var insert = cell.Value != null ? cell.Value.ToString() : null;
                     switch (cell.OwningColumn.Name)
                     {
+                            
                         case "name":
-                            anbar.name = cell.Value != null ? cell.Value.ToString() : null;
+                            anbar.name = insert;
                             break;
                         case "postal_code":
-                            anbar.postal_code = cell.Value != null ? cell.Value.ToString() : null;
+                            anbar.postal_code = insert;
                             break;
                         case "contractor_or_agent":
-                            anbar.contractor_or_agent = cell.Value != null ? cell.Value.ToString() : null;
+                            anbar.contractor_or_agent = insert;
                             break;
                         case "type":
-                            anbar.type = cell.Value != null ? cell.Value.ToString() : null;
+                            anbar.type = insert;
                             break;
                         case "co_national_id":
-                            anbar.national_id = cell.Value != null ? cell.Value.ToString() : null;
+                            anbar.co_national_id = insert;
                             break;
                         case "activity_sector":
-                            anbar.activity_sector = cell.Value != null ? cell.Value.ToString() : null;
+                            anbar.activity_sector = insert;
                             break;
                         case "national_id":
-                            anbar.national_id = cell.Value != null ? cell.Value.ToString() : null;
+                            anbar.national_id = insert;
                             break;
                         case "date":
-                            anbar.date = cell.Value != null ? cell.Value.ToString() : null;
+                            anbar.date = insert;
                             break;
                         case "mobile":
-                            anbar.mobile = cell.Value != null ? cell.Value.ToString() : null;
+                            anbar.mobile = insert;
                             break;
                         case "raste":
-                            anbar.raste = cell.Value != null ? cell.Value.ToString() : null;
+                            anbar.raste = insert;
                             break;
                         case "family":
-                            anbar.family = cell.Value != null ? cell.Value.ToString() : null;
+                            anbar.family = insert;
                             break;
                         case "senf_id":
-                            anbar.senf_id = cell.Value != null ? cell.Value.ToString() : null;
+                            anbar.senf_id = insert;
                             break;
                         case "etehadie":
-                            anbar.etehadie = cell.Value != null ? cell.Value.ToString() : null;
+                            anbar.etehadie = insert;
                             break;
                         case "fname":
-                            anbar.fname = cell.Value != null ? cell.Value.ToString() : null;
+                            anbar.fname = insert;
                             break;
                         case "tel":
-                            anbar.tel = cell.Value != null ? cell.Value.ToString() : null;
+                            anbar.tel = insert;
                             break;
                         case "address":
-                            anbar.address = cell.Value != null ? cell.Value.ToString() : null;
+                            anbar.address = insert;
                             break;
                         case "city_input":
-                            anbar.city_input = cell.Value != null ? cell.Value.ToString() : null;
+                            anbar.city_input = insert;
                             break;
                         case "province_input":
-                            anbar.province_input = cell.Value != null ? cell.Value.ToString() : null;
+                            anbar.province_input = insert;
                             break;
                         case "explain":
-                            anbar.explain = cell.Value != null ? cell.Value.ToString() : null;
+                            anbar.explain = insert;
                             break;
                         case "tag":
-                            anbar.tag = cell.Value != null ? cell.Value.ToString() : null;
+                            anbar.tag = insert;
                             break;
                     }
 

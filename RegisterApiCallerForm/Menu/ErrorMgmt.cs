@@ -73,8 +73,40 @@ namespace RegisterApiCallerForm
             dgvErrors.Rows[selected].Selected = true;
             loading.lblLoading.Text = "تعداد بروز شده " + i;
             loading.btnClose.Enabled = true;
+            loading.Close();
             
            
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.lblLoading.Text = "در حال ذخیره سازی";
+            loading.lblSrart.Text = loading.lblTime.Text = loading.lblEnd.Text = "";
+            loading.btnStop.Enabled = false;
+            loading.Show();
+            foreach (DataGridViewRow row_ in dgvErrors.Rows)
+            {
+                if (row_.Cells["current"].Value != null)
+                {
+                    string value = (string)row_.Cells["error"].Value;
+                    var rows = db.Anbars.Where(x => x.output_result ==value).Select(x => x);
+                    int i = 0;
+                    foreach (var row in rows)
+                    {
+                        i++;
+                        loading.lblLoading.Text = "در حال ذخیره سازی " + i;
+                        Application.DoEvents();
+                        row.error_farsi = row_.Cells["current"].Value.ToString();
+                    }
+                    db.SaveChanges();
+                    LoadErrors();
+
+
+                    loading.lblLoading.Text = "تعداد بروز شده " + i;
+                    loading.btnClose.Enabled = true;
+                }
+            }
         }
     }
 }

@@ -216,7 +216,8 @@ namespace RegisterApiCallerForm
 
             public static IQueryable<Anbar>  AnbarsNotSent(SemnanEntities3 db){
 
-                return db.Anbars.Where(x => (x.api_key == null || x.api_key == string.Empty || x.api_key == ""));
+                return db.Anbars.Where(x => (x.api_key == null || x.api_key == string.Empty || x.api_key == "") 
+                    && (x.error == null || x.error == string.Empty || x.error == ""));
             }
 
             public static IQueryable<Anbar> AnbarsSentNotRegistered(SemnanEntities3 db)

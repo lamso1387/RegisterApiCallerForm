@@ -30,11 +30,12 @@
         {
             this.dgvErrors = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblError = new System.Windows.Forms.Label();
-            this.tbNewFarsi = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbNewFarsi = new System.Windows.Forms.TextBox();
+            this.lblError = new System.Windows.Forms.Label();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.error = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.current = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvErrors)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -43,8 +44,8 @@
             // 
             this.dgvErrors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvErrors.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column3});
+            this.error,
+            this.current});
             this.dgvErrors.Location = new System.Drawing.Point(3, 26);
             this.dgvErrors.MultiSelect = false;
             this.dgvErrors.Name = "dgvErrors";
@@ -63,22 +64,6 @@
             this.panel1.Size = new System.Drawing.Size(844, 103);
             this.panel1.TabIndex = 1;
             // 
-            // lblError
-            // 
-            this.lblError.AutoSize = true;
-            this.lblError.Location = new System.Drawing.Point(116, 13);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(35, 13);
-            this.lblError.TabIndex = 0;
-            this.lblError.Text = "label1";
-            // 
-            // tbNewFarsi
-            // 
-            this.tbNewFarsi.Location = new System.Drawing.Point(116, 38);
-            this.tbNewFarsi.Name = "tbNewFarsi";
-            this.tbNewFarsi.Size = new System.Drawing.Size(707, 20);
-            this.tbNewFarsi.TabIndex = 1;
-            // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(116, 64);
@@ -89,23 +74,50 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // Column1
+            // tbNewFarsi
             // 
-            this.Column1.HeaderText = "error";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 500;
+            this.tbNewFarsi.Location = new System.Drawing.Point(116, 38);
+            this.tbNewFarsi.Name = "tbNewFarsi";
+            this.tbNewFarsi.Size = new System.Drawing.Size(707, 20);
+            this.tbNewFarsi.TabIndex = 1;
             // 
-            // Column3
+            // lblError
             // 
-            this.Column3.HeaderText = "current";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 400;
+            this.lblError.AutoSize = true;
+            this.lblError.Location = new System.Drawing.Point(116, 13);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(35, 13);
+            this.lblError.TabIndex = 0;
+            this.lblError.Text = "label1";
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(902, 329);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 2;
+            this.btnUpdate.Text = "بروزرسانی";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // error
+            // 
+            this.error.HeaderText = "error";
+            this.error.Name = "error";
+            this.error.ReadOnly = true;
+            this.error.Width = 500;
+            // 
+            // current
+            // 
+            this.current.HeaderText = "current";
+            this.current.Name = "current";
+            this.current.Width = 400;
             // 
             // ErrorMgmt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvErrors);
             this.Name = "ErrorMgmt";
@@ -126,7 +138,8 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox tbNewFarsi;
         private System.Windows.Forms.Label lblError;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn error;
+        private System.Windows.Forms.DataGridViewTextBoxColumn current;
     }
 }

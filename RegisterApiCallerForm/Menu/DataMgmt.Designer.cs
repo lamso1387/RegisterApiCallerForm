@@ -58,6 +58,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.tbParalel = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chbErrorNull = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -121,7 +122,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(717, 16);
+            this.label3.Location = new System.Drawing.Point(717, 10);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 21;
@@ -131,7 +132,7 @@
             // 
             this.cberrorType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cberrorType.FormattingEnabled = true;
-            this.cberrorType.Location = new System.Drawing.Point(65, 13);
+            this.cberrorType.Location = new System.Drawing.Point(65, 6);
             this.cberrorType.Name = "cberrorType";
             this.cberrorType.Size = new System.Drawing.Size(646, 21);
             this.cberrorType.TabIndex = 22;
@@ -191,7 +192,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(717, 58);
+            this.label5.Location = new System.Drawing.Point(717, 72);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(18, 13);
             this.label5.TabIndex = 27;
@@ -210,7 +211,7 @@
             // lblExplain
             // 
             this.lblExplain.AutoSize = true;
-            this.lblExplain.Location = new System.Drawing.Point(529, 83);
+            this.lblExplain.Location = new System.Drawing.Point(529, 97);
             this.lblExplain.Name = "lblExplain";
             this.lblExplain.Size = new System.Drawing.Size(0, 13);
             this.lblExplain.TabIndex = 30;
@@ -219,7 +220,7 @@
             // 
             this.cbTag.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTag.FormattingEnabled = true;
-            this.cbTag.Location = new System.Drawing.Point(633, 54);
+            this.cbTag.Location = new System.Drawing.Point(633, 68);
             this.cbTag.Name = "cbTag";
             this.cbTag.Size = new System.Drawing.Size(78, 21);
             this.cbTag.TabIndex = 32;
@@ -228,7 +229,7 @@
             // 
             // btnErrorCount
             // 
-            this.btnErrorCount.Location = new System.Drawing.Point(4, 13);
+            this.btnErrorCount.Location = new System.Drawing.Point(4, 6);
             this.btnErrorCount.Name = "btnErrorCount";
             this.btnErrorCount.Size = new System.Drawing.Size(56, 23);
             this.btnErrorCount.TabIndex = 34;
@@ -358,10 +359,22 @@
             this.panel1.Size = new System.Drawing.Size(241, 30);
             this.panel1.TabIndex = 46;
             // 
+            // chbErrorNull
+            // 
+            this.chbErrorNull.AutoSize = true;
+            this.chbErrorNull.Location = new System.Drawing.Point(604, 40);
+            this.chbErrorNull.Name = "chbErrorNull";
+            this.chbErrorNull.Size = new System.Drawing.Size(128, 17);
+            this.chbErrorNull.TabIndex = 47;
+            this.chbErrorNull.Text = "ستون error خالی باشد";
+            this.chbErrorNull.UseVisualStyleBackColor = true;
+            this.chbErrorNull.Visible = false;
+            // 
             // DataMgmt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.chbErrorNull);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.label8);
@@ -433,5 +446,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox tbParalel;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.CheckBox chbErrorNull;
     }
 }

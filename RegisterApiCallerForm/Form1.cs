@@ -29,7 +29,7 @@ namespace RegisterApiCallerForm
 
             cbMethodName.SelectedIndex = 0;
             tbBaseAddress.Text = "http://app1.nwms.ir/v2/b2b-api/";
-            tbApiKey.Text = "0123456789";
+            tbApiKey.Text = "2050130351";
 
             Publics.apiKey = tbApiKey.Text;
             Publics.uri = tbRequestUri.Text;
@@ -45,12 +45,8 @@ namespace RegisterApiCallerForm
             
         }
 
-
         private  void btnRegWarehouse_Click(object sender, EventArgs e)
         {
-          
-
-
          }
 
         
