@@ -169,7 +169,6 @@ namespace RegisterApiCallerForm
         private void cbTag_SelectedIndexChanged(object sender, EventArgs e)
         {
             lblExplain.Text = db.Anbars.Where(w => w.tag == cbTag.Text).Select(x => x.explain).DefaultIfEmpty(" ").FirstOrDefault();
-            
         }
 
         private void btnErrorCount_Click(object sender, EventArgs e)
