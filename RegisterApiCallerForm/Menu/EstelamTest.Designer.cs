@@ -43,6 +43,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cbUri = new System.Windows.Forms.ComboBox();
             this.btnExcel = new System.Windows.Forms.Button();
+            this.btnReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeeTimes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,7 +88,7 @@
             this.dgvSeeTimes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSeeTimes.Location = new System.Drawing.Point(83, 190);
             this.dgvSeeTimes.Name = "dgvSeeTimes";
-            this.dgvSeeTimes.Size = new System.Drawing.Size(819, 282);
+            this.dgvSeeTimes.Size = new System.Drawing.Size(819, 265);
             this.dgvSeeTimes.TabIndex = 5;
             // 
             // lblTime
@@ -114,7 +115,11 @@
             this.cbCount.FormattingEnabled = true;
             this.cbCount.Items.AddRange(new object[] {
             "1",
-            "2"});
+            "2",
+            "3",
+            "5",
+            "6",
+            "10"});
             this.cbCount.Location = new System.Drawing.Point(424, 102);
             this.cbCount.Name = "cbCount";
             this.cbCount.Size = new System.Drawing.Size(134, 21);
@@ -132,7 +137,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(777, 478);
+            this.btnDelete.Location = new System.Drawing.Point(777, 471);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(125, 23);
             this.btnDelete.TabIndex = 8;
@@ -182,7 +187,7 @@
             // 
             // btnExcel
             // 
-            this.btnExcel.Location = new System.Drawing.Point(638, 477);
+            this.btnExcel.Location = new System.Drawing.Point(638, 470);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(121, 23);
             this.btnExcel.TabIndex = 37;
@@ -190,10 +195,21 @@
             this.btnExcel.UseVisualStyleBackColor = true;
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
+            // btnReport
+            // 
+            this.btnReport.Location = new System.Drawing.Point(553, 470);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(75, 23);
+            this.btnReport.TabIndex = 38;
+            this.btnReport.Text = "گزارش نتایج";
+            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            // 
             // EstelamTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.cbUri);
             this.Controls.Add(this.label7);
@@ -235,5 +251,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbUri;
         private System.Windows.Forms.Button btnExcel;
+        private System.Windows.Forms.Button btnReport;
     }
 }

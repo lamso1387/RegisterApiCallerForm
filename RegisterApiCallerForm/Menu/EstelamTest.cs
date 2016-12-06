@@ -150,7 +150,7 @@ namespace RegisterApiCallerForm
 
         private void btnSee_Click(object sender, EventArgs e)
         {
-            dgvSeeTimes.DataSource = new SemnanEntities3().countrounds.Select(x => x).ToList();
+            dgvSeeTimes.DataSource = new SemnanEntities3().countrounds .Select(x => x).ToList();
             lblTime.Text = new SemnanEntities3().countrounds.Select(x => x.time_taken).Average().ToString();
         }
 
@@ -179,6 +179,13 @@ namespace RegisterApiCallerForm
         private void cbUri_SelectedIndexChanged(object sender, EventArgs e)
         {
             tbType.Text = cbUri.Text;
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            SemnanEntities3 db= new SemnanEntities3();
+           dgvSeeTimes.DataSource= db.countrounds.GroupBy(x=>x.input_type).Select(x=>new {input_type=x.Key,num_sent= x.Count(), avgerage_second=x.Average(y=>y.time_taken)}).ToList();
+          
         }
     }
 }

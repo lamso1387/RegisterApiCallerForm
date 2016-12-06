@@ -276,6 +276,7 @@ namespace RegisterApiCallerForm
         public static void TruncateTimeTable(SemnanEntities3 db, string table_name)
         {
             db.Database.ExecuteSqlCommand("truncate table "+table_name);
+            
             db.SaveChanges();
         }
 
