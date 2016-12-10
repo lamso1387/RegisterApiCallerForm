@@ -152,6 +152,7 @@ namespace RegisterApiCallerForm
             db.TimeTakens.Add(new TimeTaken() { time_taken = time_taked });
 
             DBitem.output_result = System.Text.RegularExpressions.Regex.Unescape(result);
+            DBitem.error_farsi = string.Empty;
 
             if (string.IsNullOrWhiteSpace(result)) DBitem.error = "soheil writes: result is empty from server";
             else if (!Publics.IsJson(result)) DBitem.error = "soheil writes: result is not json";

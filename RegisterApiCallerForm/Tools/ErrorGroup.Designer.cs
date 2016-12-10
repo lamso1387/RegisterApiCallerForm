@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.btnExcel = new System.Windows.Forms.Button();
-            this.dgv = new System.Windows.Forms.DataGridView();
             this.tnPerbOrgb = new System.Windows.Forms.Button();
             this.chbContainErrors = new System.Windows.Forms.CheckBox();
+            this.dgv = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,19 +44,6 @@
             this.btnExcel.Text = "خروجی اکسل";
             this.btnExcel.UseVisualStyleBackColor = true;
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
-            // 
-            // dgv
-            // 
-            this.dgv.AllowUserToAddRows = false;
-            this.dgv.AllowUserToDeleteRows = false;
-            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(12, 12);
-            this.dgv.Name = "dgv";
-            this.dgv.ReadOnly = true;
-            this.dgv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(835, 448);
-            this.dgv.TabIndex = 4;
             // 
             // tnPerbOrgb
             // 
@@ -79,14 +66,22 @@
             this.chbContainErrors.Text = "خطای سیستمی هم شامل شود";
             this.chbContainErrors.UseVisualStyleBackColor = true;
             // 
+            // dgv
+            // 
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Location = new System.Drawing.Point(12, 12);
+            this.dgv.Name = "dgv";
+            this.dgv.Size = new System.Drawing.Size(851, 448);
+            this.dgv.TabIndex = 7;
+            // 
             // ErrorGroup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(875, 523);
+            this.Controls.Add(this.dgv);
             this.Controls.Add(this.chbContainErrors);
             this.Controls.Add(this.tnPerbOrgb);
-            this.Controls.Add(this.dgv);
             this.Controls.Add(this.btnExcel);
             this.Name = "ErrorGroup";
             this.Text = "ErrorGroup";
@@ -100,9 +95,9 @@
         #endregion
 
         private System.Windows.Forms.Button btnExcel;
-        private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.Button tnPerbOrgb;
         private System.Windows.Forms.CheckBox chbContainErrors;
+        private System.Windows.Forms.DataGridView dgv;
 
     }
 }
