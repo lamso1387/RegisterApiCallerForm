@@ -183,3 +183,5 @@ C:\Users\project\Documents\Visual Studio 2012\Projects\register_api_caller_form\
 C:\Users\lamso1387\Documents\Visual Studio 2012\Projects\register\RegisterApiCallerForm\bin\Debug\RegisterApiCallerForm.exe.config
 C:\Users\lamso1387\Documents\Visual Studio 2012\Projects\register\RegisterApiCallerForm\obj\Debug\RegisterApiCallerForm.exe
 C:\Users\lamso1387\Documents\Visual Studio 2012\Projects\register\RegisterApiCallerForm\obj\Debug\RegisterApiCallerForm.pdb
+C:\Users\project\Documents\Visual Studio 2012\Projects\register_api_caller_form\RegisterApiCallerForm\obj\Debug\RegisterApiCallerForm.CompanyService.resources
+C:\Users\project\Documents\Visual Studio 2012\Projects\register_api_caller_form\RegisterApiCallerForm\obj\Debug\RegisterApiCallerForm.Query.resources

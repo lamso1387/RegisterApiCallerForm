@@ -10,6 +10,7 @@
           <EntitySet Name="countround" EntityType="SemnanModel.Store.countround" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="EstelamTime" EntityType="SemnanModel.Store.EstelamTime" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Key" EntityType="SemnanModel.Store.Key" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TableQuery" EntityType="SemnanModel.Store.TableQuery" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TimeTaken" EntityType="SemnanModel.Store.TimeTaken" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
         <EntityType Name="Anbar">
@@ -80,6 +81,13 @@
           <Property Name="api_key" Type="nvarchar" MaxLength="50" />
           <Property Name="title" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="TableQuery">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="time_avg" Type="int" />
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
         <EntityType Name="TimeTaken">
           <Key>
             <PropertyRef Name="ID" />
@@ -97,6 +105,7 @@
           <EntitySet Name="TimeTakens" EntityType="SemnanModel.TimeTaken" />
           <EntitySet Name="EstelamTimes" EntityType="SemnanModel.EstelamTime" />
           <EntitySet Name="countrounds" EntityType="SemnanModel.countround" />
+          <EntitySet Name="TableQueries" EntityType="SemnanModel.TableQuery" />
         </EntityContainer>
         <EntityType Name="Anbar">
           <Key>
@@ -172,6 +181,13 @@
           <Property Type="Int32" Name="counter" />
           <Property Type="String" Name="message" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="input_type" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TableQuery">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="time_avg" />
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -256,6 +272,14 @@
                 <ScalarProperty Name="time_taken" ColumnName="time_taken" />
                 <ScalarProperty Name="round" ColumnName="round" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableQueries">
+            <EntityTypeMapping TypeName="SemnanModel.TableQuery">
+              <MappingFragment StoreEntitySet="TableQuery">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="time_avg" ColumnName="time_avg" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

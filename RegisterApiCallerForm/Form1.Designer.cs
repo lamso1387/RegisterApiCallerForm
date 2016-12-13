@@ -48,7 +48,9 @@
             this.miEstelamTest = new System.Windows.Forms.ToolStripMenuItem();
             this.miPostCodeAssignReport = new System.Windows.Forms.ToolStripMenuItem();
             this.miPrepareDate = new System.Windows.Forms.ToolStripMenuItem();
+            this.miCompanyService = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlmain = new System.Windows.Forms.Panel();
+            this.miQuery = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlSetting.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -177,7 +179,9 @@
             this.miErrorMgtm,
             this.miEstelamTest,
             this.miPostCodeAssignReport,
-            this.miPrepareDate});
+            this.miPrepareDate,
+            this.miCompanyService,
+            this.miQuery});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -242,6 +246,13 @@
             this.miPrepareDate.Text = "اماده سازی اطلاعات";
             this.miPrepareDate.Click += new System.EventHandler(this.miPrepareDate_Click);
             // 
+            // miCompanyService
+            // 
+            this.miCompanyService.Name = "miCompanyService";
+            this.miCompanyService.Size = new System.Drawing.Size(84, 20);
+            this.miCompanyService.Text = "سرویس شرکت";
+            this.miCompanyService.Click += new System.EventHandler(this.miCompanyService_Click);
+            // 
             // pnlmain
             // 
             this.pnlmain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -249,6 +260,13 @@
             this.pnlmain.Name = "pnlmain";
             this.pnlmain.Size = new System.Drawing.Size(1000, 500);
             this.pnlmain.TabIndex = 15;
+            // 
+            // miQuery
+            // 
+            this.miQuery.Name = "miQuery";
+            this.miQuery.Size = new System.Drawing.Size(46, 20);
+            this.miQuery.Text = "کوری";
+            this.miQuery.Click += new System.EventHandler(this.miQuery_Click);
             // 
             // Form1
             // 
@@ -295,6 +313,8 @@
         private System.Windows.Forms.ToolStripMenuItem miEstelamTest;
         private System.Windows.Forms.ToolStripMenuItem miPostCodeAssignReport;
         private System.Windows.Forms.ToolStripMenuItem miPrepareDate;
+        private System.Windows.Forms.ToolStripMenuItem miCompanyService;
+        private System.Windows.Forms.ToolStripMenuItem miQuery;
     }
 }
 

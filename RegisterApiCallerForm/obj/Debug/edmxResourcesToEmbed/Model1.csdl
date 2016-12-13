@@ -6,6 +6,7 @@
     <EntitySet Name="TimeTakens" EntityType="SemnanModel.TimeTaken" />
     <EntitySet Name="EstelamTimes" EntityType="SemnanModel.EstelamTime" />
     <EntitySet Name="countrounds" EntityType="SemnanModel.countround" />
+    <EntitySet Name="TableQueries" EntityType="SemnanModel.TableQuery" />
   </EntityContainer>
   <EntityType Name="Anbar">
     <Key>
@@ -81,5 +82,12 @@
     <Property Type="Int32" Name="counter" />
     <Property Type="String" Name="message" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="input_type" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TableQuery">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="time_avg" />
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
   </EntityType>
 </Schema>

@@ -81,5 +81,13 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="TableQueries">
+      <EntityTypeMapping TypeName="SemnanModel.TableQuery">
+        <MappingFragment StoreEntitySet="TableQuery">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="time_avg" ColumnName="time_avg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

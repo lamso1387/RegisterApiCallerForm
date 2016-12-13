@@ -5,6 +5,7 @@
     <EntitySet Name="countround" EntityType="SemnanModel.Store.countround" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="EstelamTime" EntityType="SemnanModel.Store.EstelamTime" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Key" EntityType="SemnanModel.Store.Key" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TableQuery" EntityType="SemnanModel.Store.TableQuery" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TimeTaken" EntityType="SemnanModel.Store.TimeTaken" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
   <EntityType Name="Anbar">
@@ -74,6 +75,13 @@
     <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="api_key" Type="nvarchar" MaxLength="50" />
     <Property Name="title" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TableQuery">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="time_avg" Type="int" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
   </EntityType>
   <EntityType Name="TimeTaken">
     <Key>

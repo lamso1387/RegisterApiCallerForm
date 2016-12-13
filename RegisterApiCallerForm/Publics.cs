@@ -280,6 +280,12 @@ namespace RegisterApiCallerForm
             
             db.SaveChanges();
         }
+        public static void ExecuteQuery(SemnanEntities3 db, string query)
+        {
+            db.Database.ExecuteSqlCommand(query);
+            db.SaveChanges();
+            
+        }
 
         public static class ExcelMake
         {

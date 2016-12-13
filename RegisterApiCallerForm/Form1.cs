@@ -183,6 +183,18 @@ namespace RegisterApiCallerForm
             pnlmain.Controls.Clear();
             pnlmain.Controls.Add(new PrepareData(this));
         }
+
+        private void miCompanyService_Click(object sender, EventArgs e)
+        {
+            pnlmain.Controls.Clear();
+            pnlmain.Controls.Add(new CompanyService());
+        }
+
+        private void miQuery_Click(object sender, EventArgs e)
+        {
+            pnlmain.Controls.Clear();
+            pnlmain.Controls.Add(new Query());
+        }
        
     }
 }
