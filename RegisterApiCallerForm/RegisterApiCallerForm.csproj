@@ -121,10 +121,10 @@
     <Compile Include="Menu\PrepareData.Designer.cs">
       <DependentUpon>PrepareData.cs</DependentUpon>
     </Compile>
-    <Compile Include="Query.cs">
+    <Compile Include="Menu\Query.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Query.Designer.cs">
+    <Compile Include="Menu\Query.Designer.cs">
       <DependentUpon>Query.cs</DependentUpon>
     </Compile>
     <Compile Include="Service References\CompanyServiceReference\Reference.cs">
@@ -225,7 +225,7 @@
     <EmbeddedResource Include="Menu\PrepareData.resx">
       <DependentUpon>PrepareData.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Query.resx">
+    <EmbeddedResource Include="Menu\Query.resx">
       <DependentUpon>Query.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\ErrorGroup.resx">
