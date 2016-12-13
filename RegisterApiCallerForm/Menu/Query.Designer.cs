@@ -48,11 +48,11 @@
             // 
             // btnQuery
             // 
-            this.btnQuery.Location = new System.Drawing.Point(712, 133);
+            this.btnQuery.Location = new System.Drawing.Point(739, 133);
             this.btnQuery.Name = "btnQuery";
             this.btnQuery.Size = new System.Drawing.Size(75, 23);
             this.btnQuery.TabIndex = 1;
-            this.btnQuery.Text = "اجرا و نمایش";
+            this.btnQuery.Text = "نمایش";
             this.btnQuery.UseVisualStyleBackColor = true;
             this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
             // 
