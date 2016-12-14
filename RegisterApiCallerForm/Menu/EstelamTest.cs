@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Net.Http;
 using System.Diagnostics;
 using System.Net.Http.Headers;
+using Newtonsoft.Json;
 
 namespace RegisterApiCallerForm
 {
@@ -186,6 +187,135 @@ namespace RegisterApiCallerForm
             SemnanEntities3 db= new SemnanEntities3();
            dgvSeeTimes.DataSource= db.countrounds.GroupBy(x=>x.input_type).Select(x=>new {input_type=x.Key,num_sent= x.Count(), avgerage_second=x.Average(y=>y.time_taken)}).ToList();
           
+        }
+
+        private void btnExcelImport_Click(object sender, EventArgs e)
+        {
+            LoadDGVFromExcel();
+        }
+
+        private void LoadDGVFromExcel()
+        {
+            openFileDialog1.Filter = "Only 97/2003 excel with one sheet|*.xls";
+            openFileDialog1.ShowDialog();
+            lblFileName.Text = openFileDialog1.FileName;
+
+            ExcelLibrary.Office.Excel.Workbook excel_file = ExcelLibrary.Office.Excel.Workbook.Open(openFileDialog1.FileName);
+            var worksheet = excel_file.Worksheets[0]; // assuming only 1 worksheet
+            var cells = worksheet.Cells;
+
+            if (CheckExcelHeaders(cells))
+            {
+
+                // add columns
+                foreach (var header in cells.GetRow(cells.FirstRowIndex))
+                {
+                    dgvEstelamRezalt.Columns.Add(header.Value.StringValue, header.Value.StringValue);
+                }
+
+                // add rows
+                for (int rowIndex = cells.FirstRowIndex + 1; rowIndex <= cells.LastRowIndex; rowIndex++)
+                {
+                    ExcelLibrary.Office.Excel.Row file_row = cells.GetRow(rowIndex);
+
+                    dgvEstelamRezalt.Rows.Add(file_row.GetCell(0).Value);
+                }
+
+            }
+        }
+
+        private bool CheckExcelHeaders(ExcelLibrary.Office.Excel.CellCollection cells)
+        {
+            string[] main_headers = { "postal_code"};
+            foreach (var file_header in cells.GetRow(cells.FirstRowIndex))
+            {
+                Application.DoEvents();
+                if (!main_headers.Contains(file_header.Value.StringValue))
+                {
+                    MessageBox.Show(file_header.Value.StringValue + " is not valid.");
+                    return false;
+                }
+                else continue;
+            }
+
+            List<string> file_headers = new List<string>();
+            foreach (var file_header in cells.GetRow(cells.FirstRowIndex)) file_headers.Add(file_header.Value.StringValue);
+            foreach (var main_header in main_headers)
+            {
+                Application.DoEvents();
+                if (!file_headers.Contains(main_header))
+                {
+                    MessageBox.Show("file does not have column: " + main_header);
+                    return false;
+                }
+                else continue;
+            }
+
+            return true;
+
+        }
+
+        private void btnEstelamPostalCode_Click(object sender, EventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.Show();
+            SemnanEntities3 db = new SemnanEntities3();
+            Publics.ExecuteQuery(db, "truncate table OrganEstelam");
+            foreach (DataGridViewRow row in dgvEstelamRezalt.Rows)
+            {               
+                Application.DoEvents();
+                if(row.Cells[0].Value ==null) continue;
+                string postal_code = row.Cells[0].Value.ToString();
+                if (string.IsNullOrWhiteSpace(postal_code)) continue;
+                OrganEstelam organ_estelam = new OrganEstelam();                
+                organ_estelam.postal_code = postal_code;              
+                var local_estalam= db.PostalCodes.Where(x => x.postal_code == postal_code).Select(x => x);
+                if (local_estalam.Count() > 0 )
+                {
+                    var local_estalam_vars = local_estalam.First();
+                    organ_estelam.last_sent = DateTime.Now.ToString();
+                    organ_estelam.province = local_estalam_vars.province;
+                    organ_estelam.city = local_estalam_vars.city;
+                    organ_estelam.township = local_estalam_vars.township;
+                    organ_estelam.address = local_estalam_vars.address;
+                    organ_estelam.city = local_estalam_vars.city;
+
+                }
+                else 
+                {
+                    string result = Publics.client.GetAsync("2050130351/complex_by_post_code/" + postal_code).Result.Content.ReadAsStringAsync().Result;
+                    organ_estelam.output_result = System.Text.RegularExpressions.Regex.Unescape(result);
+                    organ_estelam.error_farsi = string.Empty;
+                    if (string.IsNullOrWhiteSpace(result)) organ_estelam.error = "soheil writes: result is empty from server";
+                    else if (!Publics.IsJson(result)) organ_estelam.error = "soheil writes: result is not json";
+                    else
+                    {
+                        PostalCode local_post = new PostalCode();
+                        local_post.postal_code = postal_code;
+                        var resul_post = JsonConvert.DeserializeObject<Publics.EstelamResult>(result);
+                        local_post.province = organ_estelam.province = resul_post.province;
+                        local_post.city = organ_estelam.city = resul_post.city;
+                        local_post.address = organ_estelam.address = string.IsNullOrWhiteSpace(resul_post.full_address) ?  resul_post.address: resul_post.full_address;
+                        local_post.township = organ_estelam.township = resul_post.township;
+                        local_post.last_sent =organ_estelam.last_sent= DateTime.Now.ToString();
+                        local_post.error =organ_estelam.error= string.Empty;
+                        db.PostalCodes.Add(local_post);
+                        
+                    }
+
+                }
+                db.OrganEstelams.Add(organ_estelam);
+                db.SaveChanges();
+                
+            }
+            dgvEstelamRezalt.DataSource = db.OrganEstelams.ToList();
+            loading.Close();
+
+        }
+
+        private void btnExportEstelamRezalt_Click(object sender, EventArgs e)
+        {
+            Publics.ExcelMake.ExportToExcell(dgvEstelamRezalt, 2000);
         }
     }
 }

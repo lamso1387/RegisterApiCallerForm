@@ -15,7 +15,109 @@ namespace RegisterApiCallerForm
 {
     class Publics
     {
+        public class EstelamResult {
 
+            public object files { get; set; }
+            public long create_date { get; set; }
+            public Creator creator { get; set; }
+            public string creator_national_id { get; set; }
+            public Agent agent { get; set; }
+            public string ownership_doc_register_no { get; set; }
+            public string account_status { get; set; }
+            public object agent_internal { get; set; }
+            public string postal_code { get; set; }
+            public string village { get; set; }
+            public object modifier_national_id { get; set; }
+            public string id { get; set; }
+            public List<string> activity_sector { get; set; }
+            public string city { get; set; }
+            public List<Polygon> polygon { get; set; }
+            public string zone { get; set; }
+            public object area { get; set; }
+            public List<Warehouse> warehouses { get; set; }
+            public string warehouse_usage_type { get; set; }
+            public string province { get; set; }
+            public object gov_wh_number { get; set; }
+            public string complex_set_type { get; set; }
+            public bool warehouse_server { get; set; }
+            public string full_address { get; set; }
+            public object gov_org_name { get; set; }
+            public string address { get; set; }
+            public string township { get; set; }
+            public object org_creator_national_id { get; set; }
+            public string warehouse_ownership_type { get; set; }
+            public List<Owner> owners { get; set; }
+            public string name { get; set; }
+            public string country { get; set; }
+            public string telephone_number { get; set; }
+            public List<string> st { get; set; }
+            public string rural { get; set; }
+            public bool postal_code_server { get; set; }
+            
+
+            public class Creator
+            {
+                public string mobile { get; set; }
+                public string national_id { get; set; }
+                public string name { get; set; }
+            }
+
+            public class Agent
+            {
+                public string org_creator_national_id { get; set; }
+                public string name { get; set; }
+                public string title { get; set; }
+                public string mobile { get; set; }
+                public string national_id { get; set; }
+                public string creator_national_id { get; set; }
+                public long start_epoch { get; set; }
+                public string common_name { get; set; }
+                public string account_status { get; set; }
+                public string modifier_national_id { get; set; }
+                public long expire_epoch { get; set; }
+                public string id { get; set; }
+            }
+
+            public class Polygon
+            {
+                public double lat { get; set; }
+                public double lng { get; set; }
+            }
+
+            public class Warehouse
+            {
+                public int create_date { get; set; }
+                public object behinyab_id { get; set; }
+                public List<string> supervisor_org { get; set; }
+                public string account_status { get; set; }
+                public string postal_code { get; set; }
+                public object modifier_national_id { get; set; }
+                public string id { get; set; }
+                public string goods_type { get; set; }
+                public object additional { get; set; }
+                public string area { get; set; }
+                public List<string> activity_sector { get; set; }
+                public string type { get; set; }
+                public string warehouse_usage_type { get; set; }
+                public object files { get; set; }
+                public List<object> contractors { get; set; }
+                public string org_creator_national_id { get; set; }
+                public List<object> polygon { get; set; }
+                public string name { get; set; }
+                public string creator_national_id { get; set; }
+                public object keepers { get; set; }
+                public string building_type { get; set; }
+                public object contract_doc { get; set; }
+            }
+
+            public class Owner
+            {
+                public string mobile { get; set; }
+                public string national_id { get; set; }
+                public string name { get; set; }
+            }      
+
+    }
         public static HttpClient client = new HttpClient();
         public static string apiKey;
         public static string uri;
@@ -289,6 +391,71 @@ namespace RegisterApiCallerForm
 
         public static class ExcelMake
         {
+            public static void LoadDGVFromExcel(OpenFileDialog ofDialog, Label lblFileName, string[] main_headers, DataGridView dgv)
+            {
+                ofDialog.Filter = "Only 97/2003 excel with one sheet|*.xls";
+                ofDialog.ShowDialog();
+                lblFileName.Text = ofDialog.FileName;
+
+                ExcelLibrary.Office.Excel.Workbook excel_file = ExcelLibrary.Office.Excel.Workbook.Open(ofDialog.FileName);
+                var worksheet = excel_file.Worksheets[0]; // assuming only 1 worksheet
+                var cells = worksheet.Cells;
+
+                if (CheckExcelHeaders(cells,main_headers))
+                {
+
+                    // add columns
+                    foreach (var header in cells.GetRow(cells.FirstRowIndex))
+                    {
+                        dgv.Columns.Add(header.Value.StringValue, header.Value.StringValue);
+                    }
+
+                    // add rows
+                    for (int rowIndex = cells.FirstRowIndex + 1; rowIndex <= cells.LastRowIndex; rowIndex++)
+                    {
+                        ExcelLibrary.Office.Excel.Row file_row = cells.GetRow(rowIndex);
+
+                        dgv.Rows.Add(file_row.GetCell(0).Value, file_row.GetCell(1).Value, file_row.GetCell(2).Value, file_row.GetCell(3).Value, file_row.GetCell(4).Value,
+                            file_row.GetCell(5).Value, file_row.GetCell(6).Value, file_row.GetCell(7).Value, file_row.GetCell(8).Value, file_row.GetCell(9).Value, file_row.GetCell(10).Value,
+                            file_row.GetCell(11).Value, file_row.GetCell(12).Value, file_row.GetCell(13).Value, file_row.GetCell(14).Value, file_row.GetCell(15).Value, file_row.GetCell(16).Value,
+                            file_row.GetCell(17).Value, file_row.GetCell(18).Value, file_row.GetCell(19).Value, file_row.GetCell(20).Value, file_row.GetCell(21).Value, file_row.GetCell(22).Value, file_row.GetCell(23).Value,
+                            file_row.GetCell(24).Value, file_row.GetCell(25).Value, file_row.GetCell(26).Value, file_row.GetCell(27).Value, file_row.GetCell(28).Value, file_row.GetCell(29).Value, file_row.GetCell(30).Value
+                            );
+                    }
+
+                }
+            }
+
+            public static bool CheckExcelHeaders(ExcelLibrary.Office.Excel.CellCollection cells, string[] main_headers)
+            {
+                foreach (var file_header in cells.GetRow(cells.FirstRowIndex))
+                {
+                    Application.DoEvents();
+                    if (!main_headers.Contains(file_header.Value.StringValue))
+                    {
+                        MessageBox.Show(file_header.Value.StringValue + " is not valid.");
+                        return false;
+                    }
+                    else continue;
+                }
+
+                List<string> file_headers = new List<string>();
+                foreach (var file_header in cells.GetRow(cells.FirstRowIndex)) file_headers.Add(file_header.Value.StringValue);
+                foreach (var main_header in main_headers)
+                {
+                    Application.DoEvents();
+                    if (!file_headers.Contains(main_header))
+                    {
+                        MessageBox.Show("file does not have column: " + main_header);
+                        return false;
+                    }
+                    else continue;
+                }
+
+                return true;
+
+            }
+
             public static  void ExportToExcell(DataGridView dgview, int devider)
             {              
                 Loading loading = new Loading();
@@ -347,5 +514,105 @@ namespace RegisterApiCallerForm
                 }
             }
         }
+    }
+}
+namespace gholi
+{
+    public class Creator
+    {
+    }
+
+    public class Agent
+    {
+        public object org_creator_national_id { get; set; }
+        public string name { get; set; }
+        public string title { get; set; }
+        public string mobile { get; set; }
+        public string national_id { get; set; }
+        public object creator_national_id { get; set; }
+        public int start_epoch { get; set; }
+        public string common_name { get; set; }
+        public string account_status { get; set; }
+        public object modifier_national_id { get; set; }
+        public long expire_epoch { get; set; }
+        public string id { get; set; }
+    }
+
+    public class Polygon
+    {
+        public double lat { get; set; }
+        public double lng { get; set; }
+    }
+
+    public class Warehouse
+    {
+        public int create_date { get; set; }
+        public object behinyab_id { get; set; }
+        public List<string> supervisor_org { get; set; }
+        public string account_status { get; set; }
+        public string postal_code { get; set; }
+        public object modifier_national_id { get; set; }
+        public string id { get; set; }
+        public object goods_type { get; set; }
+        public object additional { get; set; }
+        public object area { get; set; }
+        public List<string> activity_sector { get; set; }
+        public string type { get; set; }
+        public object warehouse_usage_type { get; set; }
+        public object files { get; set; }
+        public List<object> contractors { get; set; }
+        public string org_creator_national_id { get; set; }
+        public List<object> polygon { get; set; }
+        public string name { get; set; }
+        public string creator_national_id { get; set; }
+        public object keepers { get; set; }
+        public object building_type { get; set; }
+        public object contract_doc { get; set; }
+    }
+
+    public class Owner
+    {
+        public string mobile { get; set; }
+        public string national_id { get; set; }
+        public string name { get; set; }
+    }
+
+    public class RootObject
+    {
+        public object files { get; set; }
+        public int create_date { get; set; }
+        public Creator creator { get; set; }
+        public object creator_national_id { get; set; }
+        public Agent agent { get; set; }
+        public object ownership_doc_register_no { get; set; }
+        public string account_status { get; set; }
+        public object agent_internal { get; set; }
+        public string postal_code { get; set; }
+        public string village { get; set; }
+        public object modifier_national_id { get; set; }
+        public string id { get; set; }
+        public object activity_sector { get; set; }
+        public string city { get; set; }
+        public List<Polygon> polygon { get; set; }
+        public string zone { get; set; }
+        public object area { get; set; }
+        public List<Warehouse> warehouses { get; set; }
+        public string warehouse_usage_type { get; set; }
+        public string province { get; set; }
+        public object gov_wh_number { get; set; }
+        public string complex_set_type { get; set; }
+        public bool warehouse_server { get; set; }
+        public string full_address { get; set; }
+        public object gov_org_name { get; set; }
+        public object address { get; set; }
+        public string township { get; set; }
+        public object org_creator_national_id { get; set; }
+        public string warehouse_ownership_type { get; set; }
+        public List<Owner> owners { get; set; }
+        public string name { get; set; }
+        public string country { get; set; }
+        public string telephone_number { get; set; }
+        public List<string> st { get; set; }
+        public string rural { get; set; }
     }
 }

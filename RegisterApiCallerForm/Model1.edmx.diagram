@@ -4,13 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3a81383658b0413c852c71b3c00c0d3c" Name="Diagram1" ZoomLevel="50">
+      <Diagram DiagramId="3a81383658b0413c852c71b3c00c0d3c" Name="Diagram1" ZoomLevel="65">
         <EntityTypeShape EntityType="SemnanModel.Anbar" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SemnanModel.Key" Width="1.5" PointX="3.2247657474245717" PointY="1.2465477293574008" />
         <EntityTypeShape EntityType="SemnanModel.TimeTaken" Width="1.5" PointX="3.375" PointY="4.25" />
         <EntityTypeShape EntityType="SemnanModel.EstelamTime" Width="1.5" PointX="5.875" PointY="3.25" />
         <EntityTypeShape EntityType="SemnanModel.countround" Width="1.5" PointX="5.75" PointY="6.375" />
-        <EntityTypeShape EntityType="SemnanModel.TableQuery" Width="1.5" PointX="9.3620955559248564" PointY="3.5753187851865396" />
+        <EntityTypeShape EntityType="SemnanModel.PostalCode" Width="1.5" PointX="3.125" PointY="7.125" />
+        <EntityTypeShape EntityType="SemnanModel.OrganEstelam" Width="1.5" PointX="12" PointY="1.125" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

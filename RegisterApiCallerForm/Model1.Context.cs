@@ -30,6 +30,7 @@ namespace RegisterApiCallerForm
         public DbSet<TimeTaken> TimeTakens { get; set; }
         public DbSet<EstelamTime> EstelamTimes { get; set; }
         public DbSet<countround> countrounds { get; set; }
-        public DbSet<TableQuery> TableQueries { get; set; }
+        public DbSet<PostalCode> PostalCodes { get; set; }
+        public DbSet<OrganEstelam> OrganEstelams { get; set; }
     }
 }

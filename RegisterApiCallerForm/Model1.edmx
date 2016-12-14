@@ -10,7 +10,8 @@
           <EntitySet Name="countround" EntityType="SemnanModel.Store.countround" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="EstelamTime" EntityType="SemnanModel.Store.EstelamTime" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Key" EntityType="SemnanModel.Store.Key" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="TableQuery" EntityType="SemnanModel.Store.TableQuery" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrganEstelam" EntityType="SemnanModel.Store.OrganEstelam" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PostalCode" EntityType="SemnanModel.Store.PostalCode" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TimeTaken" EntityType="SemnanModel.Store.TimeTaken" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
         <EntityType Name="Anbar">
@@ -81,13 +82,49 @@
           <Property Name="api_key" Type="nvarchar" MaxLength="50" />
           <Property Name="title" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="TableQuery">
+        <EntityType Name="OrganEstelam">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="time_avg" Type="int" />
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="postal_code" Type="nvarchar" MaxLength="50" />
+          <Property Name="province_input" Type="nvarchar" MaxLength="50" />
+          <Property Name="city_input" Type="nvarchar" MaxLength="50" />
+          <Property Name="address_input" Type="nvarchar(max)" />
+          <Property Name="province" Type="nvarchar" MaxLength="50" />
+          <Property Name="city" Type="nvarchar" MaxLength="50" />
+          <Property Name="address" Type="nvarchar(max)" />
+          <Property Name="postal_code_server" Type="nvarchar" MaxLength="50" />
+          <Property Name="township" Type="nvarchar" MaxLength="50" />
+          <Property Name="warehouse_server" Type="nvarchar" MaxLength="50" />
+          <Property Name="error_farsi" Type="nvarchar" MaxLength="50" />
+          <Property Name="error" Type="nvarchar(max)" />
+          <Property Name="last_sent" Type="nvarchar" MaxLength="50" />
+          <Property Name="output_result" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="PostalCode">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="postal_code" Type="nvarchar" MaxLength="50" />
+          <Property Name="province_input" Type="nvarchar" MaxLength="50" />
+          <Property Name="city_input" Type="nvarchar" MaxLength="50" />
+          <Property Name="address_input" Type="nvarchar(max)" />
+          <Property Name="province" Type="nvarchar" MaxLength="50" />
+          <Property Name="city" Type="nvarchar" MaxLength="50" />
+          <Property Name="address" Type="nvarchar(max)" />
+          <Property Name="postal_code_server" Type="nvarchar" MaxLength="50" />
+          <Property Name="township" Type="nvarchar" MaxLength="50" />
+          <Property Name="warehouse_server" Type="nvarchar" MaxLength="50" />
+          <Property Name="error_farsi" Type="nvarchar" MaxLength="50" />
+          <Property Name="error" Type="nvarchar(max)" />
+          <Property Name="last_sent" Type="nvarchar" MaxLength="50" />
+          <Property Name="output_result" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Semnan.dbo.TableQuery' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
         <EntityType Name="TimeTaken">
           <Key>
             <PropertyRef Name="ID" />
@@ -105,7 +142,8 @@
           <EntitySet Name="TimeTakens" EntityType="SemnanModel.TimeTaken" />
           <EntitySet Name="EstelamTimes" EntityType="SemnanModel.EstelamTime" />
           <EntitySet Name="countrounds" EntityType="SemnanModel.countround" />
-          <EntitySet Name="TableQueries" EntityType="SemnanModel.TableQuery" />
+          <EntitySet Name="PostalCodes" EntityType="SemnanModel.PostalCode" />
+          <EntitySet Name="OrganEstelams" EntityType="SemnanModel.OrganEstelam" />
         </EntityContainer>
         <EntityType Name="Anbar">
           <Key>
@@ -182,12 +220,45 @@
           <Property Type="String" Name="message" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="input_type" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="TableQuery">
+        <EntityType Name="PostalCode">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Type="Int32" Name="time_avg" />
-          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="postal_code" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="province_input" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="city_input" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="address_input" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="province" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="city" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="address" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="postal_code_server" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="township" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="warehouse_server" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="error_farsi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="error" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="last_sent" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="output_result" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="OrganEstelam">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="postal_code" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="province_input" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="city_input" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="address_input" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="province" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="city" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="address" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="postal_code_server" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="township" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="warehouse_server" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="error_farsi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="error" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="last_sent" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="output_result" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -275,11 +346,45 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TableQueries">
-            <EntityTypeMapping TypeName="SemnanModel.TableQuery">
-              <MappingFragment StoreEntitySet="TableQuery">
+          <EntitySetMapping Name="PostalCodes">
+            <EntityTypeMapping TypeName="SemnanModel.PostalCode">
+              <MappingFragment StoreEntitySet="PostalCode">
+                <ScalarProperty Name="output_result" ColumnName="output_result" />
+                <ScalarProperty Name="last_sent" ColumnName="last_sent" />
+                <ScalarProperty Name="error" ColumnName="error" />
+                <ScalarProperty Name="error_farsi" ColumnName="error_farsi" />
+                <ScalarProperty Name="warehouse_server" ColumnName="warehouse_server" />
+                <ScalarProperty Name="township" ColumnName="township" />
+                <ScalarProperty Name="postal_code_server" ColumnName="postal_code_server" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="province" ColumnName="province" />
+                <ScalarProperty Name="address_input" ColumnName="address_input" />
+                <ScalarProperty Name="city_input" ColumnName="city_input" />
+                <ScalarProperty Name="province_input" ColumnName="province_input" />
+                <ScalarProperty Name="postal_code" ColumnName="postal_code" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="time_avg" ColumnName="time_avg" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrganEstelams">
+            <EntityTypeMapping TypeName="SemnanModel.OrganEstelam">
+              <MappingFragment StoreEntitySet="OrganEstelam">
+                <ScalarProperty Name="output_result" ColumnName="output_result" />
+                <ScalarProperty Name="last_sent" ColumnName="last_sent" />
+                <ScalarProperty Name="error" ColumnName="error" />
+                <ScalarProperty Name="error_farsi" ColumnName="error_farsi" />
+                <ScalarProperty Name="warehouse_server" ColumnName="warehouse_server" />
+                <ScalarProperty Name="township" ColumnName="township" />
+                <ScalarProperty Name="postal_code_server" ColumnName="postal_code_server" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="province" ColumnName="province" />
+                <ScalarProperty Name="address_input" ColumnName="address_input" />
+                <ScalarProperty Name="city_input" ColumnName="city_input" />
+                <ScalarProperty Name="province_input" ColumnName="province_input" />
+                <ScalarProperty Name="postal_code" ColumnName="postal_code" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

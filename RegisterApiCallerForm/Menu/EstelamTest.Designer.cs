@@ -44,12 +44,23 @@
             this.cbUri = new System.Windows.Forms.ComboBox();
             this.btnExcel = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnEstelamPostalCode = new System.Windows.Forms.Button();
+            this.lblFileName = new System.Windows.Forms.Label();
+            this.btnExportEstelamRezalt = new System.Windows.Forms.Button();
+            this.dgvEstelamRezalt = new System.Windows.Forms.DataGridView();
+            this.btnExcelImport = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeeTimes)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEstelamRezalt)).BeginInit();
             this.SuspendLayout();
             // 
             // tbPostalCode
             // 
-            this.tbPostalCode.Location = new System.Drawing.Point(421, 15);
+            this.tbPostalCode.Location = new System.Drawing.Point(107, 18);
             this.tbPostalCode.Name = "tbPostalCode";
             this.tbPostalCode.Size = new System.Drawing.Size(131, 20);
             this.tbPostalCode.TabIndex = 0;
@@ -58,7 +69,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(561, 18);
+            this.label1.Location = new System.Drawing.Point(247, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 1;
@@ -66,7 +77,7 @@
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(424, 129);
+            this.btnSend.Location = new System.Drawing.Point(110, 132);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(131, 23);
             this.btnSend.TabIndex = 2;
@@ -77,7 +88,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(564, 105);
+            this.label2.Location = new System.Drawing.Point(250, 108);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 13);
             this.label2.TabIndex = 4;
@@ -86,15 +97,15 @@
             // dgvSeeTimes
             // 
             this.dgvSeeTimes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSeeTimes.Location = new System.Drawing.Point(83, 190);
+            this.dgvSeeTimes.Location = new System.Drawing.Point(61, 193);
             this.dgvSeeTimes.Name = "dgvSeeTimes";
-            this.dgvSeeTimes.Size = new System.Drawing.Size(819, 265);
+            this.dgvSeeTimes.Size = new System.Drawing.Size(229, 178);
             this.dgvSeeTimes.TabIndex = 5;
             // 
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(83, 483);
+            this.lblTime.Location = new System.Drawing.Point(150, 376);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(66, 13);
             this.lblTime.TabIndex = 6;
@@ -102,7 +113,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Location = new System.Drawing.Point(3, 474);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
@@ -120,14 +131,14 @@
             "5",
             "6",
             "10"});
-            this.cbCount.Location = new System.Drawing.Point(424, 102);
+            this.cbCount.Location = new System.Drawing.Point(110, 105);
             this.cbCount.Name = "cbCount";
             this.cbCount.Size = new System.Drawing.Size(134, 21);
             this.cbCount.TabIndex = 7;
             // 
             // btnSee
             // 
-            this.btnSee.Location = new System.Drawing.Point(424, 161);
+            this.btnSee.Location = new System.Drawing.Point(110, 164);
             this.btnSee.Name = "btnSee";
             this.btnSee.Size = new System.Drawing.Size(131, 23);
             this.btnSee.TabIndex = 4;
@@ -137,9 +148,9 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(777, 471);
+            this.btnDelete.Location = new System.Drawing.Point(220, 404);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(125, 23);
+            this.btnDelete.Size = new System.Drawing.Size(70, 36);
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "پاکسازی جدول زمان";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -148,7 +159,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(607, 78);
+            this.label3.Location = new System.Drawing.Point(293, 81);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(24, 13);
             this.label3.TabIndex = 9;
@@ -156,7 +167,7 @@
             // 
             // tbType
             // 
-            this.tbType.Location = new System.Drawing.Point(351, 75);
+            this.tbType.Location = new System.Drawing.Point(37, 78);
             this.tbType.Name = "tbType";
             this.tbType.Size = new System.Drawing.Size(250, 20);
             this.tbType.TabIndex = 10;
@@ -165,7 +176,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(610, 51);
+            this.label7.Location = new System.Drawing.Point(296, 54);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(21, 13);
             this.label7.TabIndex = 27;
@@ -178,7 +189,7 @@
             this.cbUri.Items.AddRange(new object[] {
             "get  complex_by_post_code/",
             "post admin/ext-service/postal_code"});
-            this.cbUri.Location = new System.Drawing.Point(351, 48);
+            this.cbUri.Location = new System.Drawing.Point(37, 51);
             this.cbUri.Name = "cbUri";
             this.cbUri.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cbUri.Size = new System.Drawing.Size(253, 21);
@@ -187,9 +198,9 @@
             // 
             // btnExcel
             // 
-            this.btnExcel.Location = new System.Drawing.Point(638, 470);
+            this.btnExcel.Location = new System.Drawing.Point(152, 404);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(121, 23);
+            this.btnExcel.Size = new System.Drawing.Size(62, 37);
             this.btnExcel.TabIndex = 37;
             this.btnExcel.Text = "خروجی اکسل";
             this.btnExcel.UseVisualStyleBackColor = true;
@@ -197,40 +208,120 @@
             // 
             // btnReport
             // 
-            this.btnReport.Location = new System.Drawing.Point(553, 470);
+            this.btnReport.Location = new System.Drawing.Point(84, 403);
             this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(75, 23);
+            this.btnReport.Size = new System.Drawing.Size(62, 37);
             this.btnReport.TabIndex = 38;
             this.btnReport.Text = "گزارش نتایج";
             this.btnReport.UseVisualStyleBackColor = true;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnReport);
+            this.groupBox1.Controls.Add(this.lblTime);
+            this.groupBox1.Controls.Add(this.cbUri);
+            this.groupBox1.Controls.Add(this.btnExcel);
+            this.groupBox1.Controls.Add(this.tbPostalCode);
+            this.groupBox1.Controls.Add(this.btnDelete);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.btnSee);
+            this.groupBox1.Controls.Add(this.dgvSeeTimes);
+            this.groupBox1.Controls.Add(this.cbCount);
+            this.groupBox1.Controls.Add(this.btnSend);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.tbType);
+            this.groupBox1.Location = new System.Drawing.Point(12, 10);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(359, 446);
+            this.groupBox1.TabIndex = 39;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "تست";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnEstelamPostalCode);
+            this.groupBox2.Controls.Add(this.lblFileName);
+            this.groupBox2.Controls.Add(this.btnExportEstelamRezalt);
+            this.groupBox2.Controls.Add(this.dgvEstelamRezalt);
+            this.groupBox2.Controls.Add(this.btnExcelImport);
+            this.groupBox2.Location = new System.Drawing.Point(407, 10);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(580, 446);
+            this.groupBox2.TabIndex = 40;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "استعلام";
+            // 
+            // btnEstelamPostalCode
+            // 
+            this.btnEstelamPostalCode.Location = new System.Drawing.Point(343, 21);
+            this.btnEstelamPostalCode.Name = "btnEstelamPostalCode";
+            this.btnEstelamPostalCode.Size = new System.Drawing.Size(75, 23);
+            this.btnEstelamPostalCode.TabIndex = 4;
+            this.btnEstelamPostalCode.Text = "استعلام";
+            this.btnEstelamPostalCode.UseVisualStyleBackColor = true;
+            this.btnEstelamPostalCode.Click += new System.EventHandler(this.btnEstelamPostalCode_Click);
+            // 
+            // lblFileName
+            // 
+            this.lblFileName.AutoSize = true;
+            this.lblFileName.Location = new System.Drawing.Point(6, 31);
+            this.lblFileName.Name = "lblFileName";
+            this.lblFileName.Size = new System.Drawing.Size(35, 13);
+            this.lblFileName.TabIndex = 3;
+            this.lblFileName.Text = "label4";
+            // 
+            // btnExportEstelamRezalt
+            // 
+            this.btnExportEstelamRezalt.Location = new System.Drawing.Point(479, 413);
+            this.btnExportEstelamRezalt.Name = "btnExportEstelamRezalt";
+            this.btnExportEstelamRezalt.Size = new System.Drawing.Size(95, 23);
+            this.btnExportEstelamRezalt.TabIndex = 2;
+            this.btnExportEstelamRezalt.Text = "خروجی اکسل";
+            this.btnExportEstelamRezalt.UseVisualStyleBackColor = true;
+            this.btnExportEstelamRezalt.Click += new System.EventHandler(this.btnExportEstelamRezalt_Click);
+            // 
+            // dgvEstelamRezalt
+            // 
+            this.dgvEstelamRezalt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEstelamRezalt.Location = new System.Drawing.Point(6, 54);
+            this.dgvEstelamRezalt.Name = "dgvEstelamRezalt";
+            this.dgvEstelamRezalt.Size = new System.Drawing.Size(568, 353);
+            this.dgvEstelamRezalt.TabIndex = 1;
+            // 
+            // btnExcelImport
+            // 
+            this.btnExcelImport.Location = new System.Drawing.Point(453, 21);
+            this.btnExcelImport.Name = "btnExcelImport";
+            this.btnExcelImport.Size = new System.Drawing.Size(108, 23);
+            this.btnExcelImport.TabIndex = 0;
+            this.btnExcelImport.Text = "ورود فایل اکسل";
+            this.btnExcelImport.UseVisualStyleBackColor = true;
+            this.btnExcelImport.Click += new System.EventHandler(this.btnExcelImport_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // EstelamTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnReport);
-            this.Controls.Add(this.btnExcel);
-            this.Controls.Add(this.cbUri);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.cbCount);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.tbType);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnSend);
-            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.lblTime);
-            this.Controls.Add(this.dgvSeeTimes);
-            this.Controls.Add(this.btnSee);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbPostalCode);
+            this.Controls.Add(this.groupBox1);
             this.Name = "EstelamTest";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Size = new System.Drawing.Size(1000, 500);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeeTimes)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEstelamRezalt)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -252,5 +343,13 @@
         private System.Windows.Forms.ComboBox cbUri;
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Button btnReport;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnExportEstelamRezalt;
+        private System.Windows.Forms.DataGridView dgvEstelamRezalt;
+        private System.Windows.Forms.Button btnExcelImport;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label lblFileName;
+        private System.Windows.Forms.Button btnEstelamPostalCode;
     }
 }

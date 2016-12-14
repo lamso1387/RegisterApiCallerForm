@@ -6,7 +6,8 @@
     <EntitySet Name="TimeTakens" EntityType="SemnanModel.TimeTaken" />
     <EntitySet Name="EstelamTimes" EntityType="SemnanModel.EstelamTime" />
     <EntitySet Name="countrounds" EntityType="SemnanModel.countround" />
-    <EntitySet Name="TableQueries" EntityType="SemnanModel.TableQuery" />
+    <EntitySet Name="PostalCodes" EntityType="SemnanModel.PostalCode" />
+    <EntitySet Name="OrganEstelams" EntityType="SemnanModel.OrganEstelam" />
   </EntityContainer>
   <EntityType Name="Anbar">
     <Key>
@@ -83,11 +84,44 @@
     <Property Type="String" Name="message" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="input_type" MaxLength="255" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityType Name="TableQuery">
+  <EntityType Name="PostalCode">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Type="Int32" Name="time_avg" />
-    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="postal_code" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="province_input" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="city_input" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="address_input" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="province" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="city" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="address" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="postal_code_server" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="township" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="warehouse_server" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="error_farsi" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="error" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="last_sent" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="output_result" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="OrganEstelam">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="postal_code" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="province_input" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="city_input" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="address_input" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="province" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="city" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="address" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="postal_code_server" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="township" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="warehouse_server" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="error_farsi" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="error" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="last_sent" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="output_result" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

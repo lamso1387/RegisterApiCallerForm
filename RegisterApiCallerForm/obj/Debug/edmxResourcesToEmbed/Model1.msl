@@ -81,11 +81,45 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TableQueries">
-      <EntityTypeMapping TypeName="SemnanModel.TableQuery">
-        <MappingFragment StoreEntitySet="TableQuery">
+    <EntitySetMapping Name="PostalCodes">
+      <EntityTypeMapping TypeName="SemnanModel.PostalCode">
+        <MappingFragment StoreEntitySet="PostalCode">
+          <ScalarProperty Name="output_result" ColumnName="output_result" />
+          <ScalarProperty Name="last_sent" ColumnName="last_sent" />
+          <ScalarProperty Name="error" ColumnName="error" />
+          <ScalarProperty Name="error_farsi" ColumnName="error_farsi" />
+          <ScalarProperty Name="warehouse_server" ColumnName="warehouse_server" />
+          <ScalarProperty Name="township" ColumnName="township" />
+          <ScalarProperty Name="postal_code_server" ColumnName="postal_code_server" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="province" ColumnName="province" />
+          <ScalarProperty Name="address_input" ColumnName="address_input" />
+          <ScalarProperty Name="city_input" ColumnName="city_input" />
+          <ScalarProperty Name="province_input" ColumnName="province_input" />
+          <ScalarProperty Name="postal_code" ColumnName="postal_code" />
           <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="time_avg" ColumnName="time_avg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrganEstelams">
+      <EntityTypeMapping TypeName="SemnanModel.OrganEstelam">
+        <MappingFragment StoreEntitySet="OrganEstelam">
+          <ScalarProperty Name="output_result" ColumnName="output_result" />
+          <ScalarProperty Name="last_sent" ColumnName="last_sent" />
+          <ScalarProperty Name="error" ColumnName="error" />
+          <ScalarProperty Name="error_farsi" ColumnName="error_farsi" />
+          <ScalarProperty Name="warehouse_server" ColumnName="warehouse_server" />
+          <ScalarProperty Name="township" ColumnName="township" />
+          <ScalarProperty Name="postal_code_server" ColumnName="postal_code_server" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="province" ColumnName="province" />
+          <ScalarProperty Name="address_input" ColumnName="address_input" />
+          <ScalarProperty Name="city_input" ColumnName="city_input" />
+          <ScalarProperty Name="province_input" ColumnName="province_input" />
+          <ScalarProperty Name="postal_code" ColumnName="postal_code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

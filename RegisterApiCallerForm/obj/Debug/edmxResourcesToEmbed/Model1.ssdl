@@ -5,7 +5,8 @@
     <EntitySet Name="countround" EntityType="SemnanModel.Store.countround" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="EstelamTime" EntityType="SemnanModel.Store.EstelamTime" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Key" EntityType="SemnanModel.Store.Key" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TableQuery" EntityType="SemnanModel.Store.TableQuery" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OrganEstelam" EntityType="SemnanModel.Store.OrganEstelam" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PostalCode" EntityType="SemnanModel.Store.PostalCode" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TimeTaken" EntityType="SemnanModel.Store.TimeTaken" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
   <EntityType Name="Anbar">
@@ -76,13 +77,49 @@
     <Property Name="api_key" Type="nvarchar" MaxLength="50" />
     <Property Name="title" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <EntityType Name="TableQuery">
+  <EntityType Name="OrganEstelam">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="time_avg" Type="int" />
-    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="postal_code" Type="nvarchar" MaxLength="50" />
+    <Property Name="province_input" Type="nvarchar" MaxLength="50" />
+    <Property Name="city_input" Type="nvarchar" MaxLength="50" />
+    <Property Name="address_input" Type="nvarchar(max)" />
+    <Property Name="province" Type="nvarchar" MaxLength="50" />
+    <Property Name="city" Type="nvarchar" MaxLength="50" />
+    <Property Name="address" Type="nvarchar(max)" />
+    <Property Name="postal_code_server" Type="nvarchar" MaxLength="50" />
+    <Property Name="township" Type="nvarchar" MaxLength="50" />
+    <Property Name="warehouse_server" Type="nvarchar" MaxLength="50" />
+    <Property Name="error_farsi" Type="nvarchar" MaxLength="50" />
+    <Property Name="error" Type="nvarchar(max)" />
+    <Property Name="last_sent" Type="nvarchar" MaxLength="50" />
+    <Property Name="output_result" Type="nvarchar(max)" />
   </EntityType>
+  <EntityType Name="PostalCode">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="postal_code" Type="nvarchar" MaxLength="50" />
+    <Property Name="province_input" Type="nvarchar" MaxLength="50" />
+    <Property Name="city_input" Type="nvarchar" MaxLength="50" />
+    <Property Name="address_input" Type="nvarchar(max)" />
+    <Property Name="province" Type="nvarchar" MaxLength="50" />
+    <Property Name="city" Type="nvarchar" MaxLength="50" />
+    <Property Name="address" Type="nvarchar(max)" />
+    <Property Name="postal_code_server" Type="nvarchar" MaxLength="50" />
+    <Property Name="township" Type="nvarchar" MaxLength="50" />
+    <Property Name="warehouse_server" Type="nvarchar" MaxLength="50" />
+    <Property Name="error_farsi" Type="nvarchar" MaxLength="50" />
+    <Property Name="error" Type="nvarchar(max)" />
+    <Property Name="last_sent" Type="nvarchar" MaxLength="50" />
+    <Property Name="output_result" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Semnan.dbo.TableQuery' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
   <EntityType Name="TimeTaken">
     <Key>
       <PropertyRef Name="ID" />
