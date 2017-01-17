@@ -16,7 +16,7 @@ namespace RegisterApiCallerForm
     class Publics
     {
         public class EstelamResult {
-
+           
             public object files { get; set; }
             public long create_date { get; set; }
             public Creator creator { get; set; }
@@ -132,6 +132,7 @@ namespace RegisterApiCallerForm
 
         public static void ParallelSend(SemnanEntities3 db, List<Anbar> DBitems, string from, Button btnSearch, string parallel)
         {
+            
             i = 0;
             all = DBitems.Count;
             notRegistered = 0;
